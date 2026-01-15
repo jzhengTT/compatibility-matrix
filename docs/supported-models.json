@@ -1,0 +1,234 @@
+{
+  "Models": [
+    {
+      "Id": "qwen3-8b",
+      "DisplayName": "Qwen3-8B",
+      "Family": "Qwen",
+      "Tasks": ["text-generation", "benchmark"],
+      "Description": "",
+      "Links": [],
+      "EditorialNotes": "",
+      "Variants": [
+        {
+          "VariantId": "qwen3-8b-default",
+          "DisplayName": "Qwen3-8B",
+          "Precision": "",
+          "ContextWindow": 32000,
+          "CompatibilityList": [
+            {
+              "SupportedHardware": "galaxy",
+              "SupportedSoftware": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "gemma-3-27b-it",
+      "DisplayName": "gemma-3-27b-it",
+      "Family": "Gemma",
+      "Tasks": ["text-generation"],
+      "Description": "",
+      "Links": [],
+      "EditorialNotes": "",
+      "Variants": [
+        {
+          "VariantId": "gemma-3-27b-it-default",
+          "DisplayName": "gemma-3-27b-it",
+          "Precision": "",
+          "ContextWindow": null,
+          "CompatibilityList": [
+            {
+              "SupportedHardware": "galaxy",
+              "SupportedSoftware": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "llama-3-1-8b-instruct",
+      "DisplayName": "Llama-3.1-8B-Instruct",
+      "Family": "Llama",
+      "Tasks": ["text-generation", "benchmark"],
+      "Description": "",
+      "Links": [],
+      "EditorialNotes": "",
+      "Variants": [
+        {
+          "VariantId": "llama-3-1-8b-instruct-default",
+          "DisplayName": "Llama-3.1-8B-Instruct",
+          "Precision": "",
+          "ContextWindow": 32000,
+          "CompatibilityList": [
+            {
+              "SupportedHardware": "galaxy",
+              "SupportedSoftware": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "llama-3-3-70b-instruct",
+      "DisplayName": "Llama-3.3-70B-Instruct",
+      "Family": "Llama",
+      "Tasks": ["text-generation", "benchmark"],
+      "Description": "",
+      "Links": [],
+      "EditorialNotes": "",
+      "Variants": [
+        {
+          "VariantId": "llama-3-3-70b-instruct-default",
+          "DisplayName": "Llama-3.3-70B-Instruct",
+          "Precision": "",
+          "ContextWindow": 32000,
+          "CompatibilityList": [
+            {
+              "SupportedHardware": "galaxy",
+              "SupportedSoftware": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "qwq-32b",
+      "DisplayName": "QwQ-32B",
+      "Family": "Qwen",
+      "Tasks": ["text-generation", "benchmark"],
+      "Description": "",
+      "Links": [],
+      "EditorialNotes": "",
+      "Variants": [
+        {
+          "VariantId": "qwq-32b-default",
+          "DisplayName": "QwQ-32B",
+          "Precision": "",
+          "ContextWindow": 32000,
+          "CompatibilityList": [
+            {
+              "SupportedHardware": "galaxy",
+              "SupportedSoftware": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "qwen2-5-72b-instruct",
+      "DisplayName": "Qwen2.5-72B-Instruct",
+      "Family": "Qwen",
+      "Tasks": ["text-generation", "benchmark"],
+      "Description": "",
+      "Links": [],
+      "EditorialNotes": "",
+      "Variants": [
+        {
+          "VariantId": "qwen2-5-72b-instruct-default",
+          "DisplayName": "Qwen2.5-72B-Instruct",
+          "Precision": "",
+          "ContextWindow": 32000,
+          "CompatibilityList": [
+            {
+              "SupportedHardware": "galaxy",
+              "SupportedSoftware": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "qwen3-32b",
+      "DisplayName": "Qwen3-32B",
+      "Family": "Qwen",
+      "Tasks": ["text-generation", "benchmark"],
+      "Description": "",
+      "Links": [],
+      "EditorialNotes": "",
+      "Variants": [
+        {
+          "VariantId": "qwen3-32b-default",
+          "DisplayName": "Qwen3-32B",
+          "Precision": "",
+          "ContextWindow": 32000,
+          "CompatibilityList": [
+            {
+              "SupportedHardware": "galaxy",
+              "SupportedSoftware": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "stable-diffusion-3-5-large",
+      "DisplayName": "stable-diffusion-3.5-large",
+      "Family": "Stable Diffusion",
+      "Tasks": ["image-generation"],
+      "Description": "",
+      "Links": [],
+      "EditorialNotes": "",
+      "Variants": [
+        {
+          "VariantId": "stable-diffusion-3-5-large-default",
+          "DisplayName": "stable-diffusion-3.5-large",
+          "Precision": "",
+          "ContextWindow": null,
+          "CompatibilityList": [
+            {
+              "SupportedHardware": "galaxy",
+              "SupportedSoftware": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "stable-diffusion-xl-base-1-0",
+      "DisplayName": "stable-diffusion-xl-base-1.0",
+      "Family": "Stable Diffusion",
+      "Tasks": ["image-generation"],
+      "Description": "",
+      "Links": [],
+      "EditorialNotes": "",
+      "Variants": [
+        {
+          "VariantId": "stable-diffusion-xl-base-1-0-default",
+          "DisplayName": "stable-diffusion-xl-base-1.0",
+          "Precision": "",
+          "ContextWindow": null,
+          "CompatibilityList": [
+            {
+              "SupportedHardware": "galaxy",
+              "SupportedSoftware": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "whisper-large-v3",
+      "DisplayName": "whisper-large-v3",
+      "Family": "Whisper",
+      "Tasks": ["speech-recognition"],
+      "Description": "",
+      "Links": [],
+      "EditorialNotes": "",
+      "Variants": [
+        {
+          "VariantId": "whisper-large-v3-default",
+          "DisplayName": "whisper-large-v3",
+          "Precision": "",
+          "ContextWindow": null,
+          "CompatibilityList": [
+            {
+              "SupportedHardware": "galaxy",
+              "SupportedSoftware": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

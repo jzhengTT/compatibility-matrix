@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(if [ -z \"$VIRTUAL_ENV\" ])",
+      "Bash(then echo \"No virtual environment active\")",
+      "Bash(else echo \"Virtual environment active: $VIRTUAL_ENV\")",
+      "Bash(fi)",
+      "Bash(if [ ! -d \".venv\" ])",
+      "Bash(then python3 -m venv .venv)",
+      "Bash(else echo \"Virtual environment already exists\")"
+    ]
+  }
+}

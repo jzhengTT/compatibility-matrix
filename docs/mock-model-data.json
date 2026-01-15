@@ -1,0 +1,295 @@
+{
+  "metadata": {
+    "generated_at": "2025-12-14T10:30:00Z",
+    "source": "postgres",
+    "schema_version": "1.0"
+  },
+  "models": [
+    {
+      "id": "llama-3-8b",
+      "display_name": "LLaMA-3 8B",
+      "family": "LlaMA",
+      "tasks": [
+        "LLM",
+        "Text-Generation"
+      ],
+      "compatibility": [
+        {
+          "hardware": "p100 (Blackhole)",
+          "status": "Supported"
+        },
+        {
+          "hardware": "n300 (Wormhole)",
+          "status": "Supported"
+        }
+      ]
+    },
+    {
+      "id": "llama-3-70b",
+      "display_name": "LLaMA-3 70B",
+      "family": "LlaMA",
+      "tasks": [
+        "LLM",
+        "Text-Generation"
+      ],
+      "compatibility": [
+        {
+          "hardware": "2 × p150 (Blackhole)",
+          "status": "Supported"
+        },
+        {
+          "hardware": "Galaxy (Blackhole)",
+          "status": "Coming Soon",
+          "estimated_availability": "Q2 2025"
+        }
+      ]
+    },
+    {
+      "id": "deepseek-v3-14b",
+      "display_name": "DeepSeek-V3 14B",
+      "family": "DeepSeek",
+      "tasks": [
+        "LLM",
+        "Text-Generation"
+      ],
+      "compatibility": [
+        {
+          "hardware": "p150 (Blackhole)",
+          "status": "Supported"
+        }
+      ]
+    },
+    {
+      "id": "qwen-2.5-7b",
+      "display_name": "Qwen 2.5 7B",
+      "family": "Qwen",
+      "tasks": [
+        "LLM",
+        "Text-Generation"
+      ],
+      "compatibility": [
+        {
+          "hardware": "n300 (Wormhole)",
+          "status": "Supported"
+        },
+        {
+          "hardware": "QuietBox (Wormhole)",
+          "status": "Supported"
+        }
+      ]
+    },
+    {
+      "id": "qwen-2.5-32b",
+      "display_name": "Qwen 2.5 32B",
+      "family": "Qwen",
+      "tasks": [
+        "LLM",
+        "Text-Generation"
+      ],
+      "compatibility": [
+        {
+          "hardware": "p300 (Blackhole)",
+          "status": "Coming Soon",
+          "estimated_availability": "Q1 2025"
+        }
+      ]
+    },
+    {
+      "id": "falcon-180b",
+      "display_name": "Falcon 180B",
+      "family": "Falcon",
+      "tasks": [
+        "LLM",
+        "Text-Generation"
+      ],
+      "compatibility": [
+        {
+          "hardware": "Galaxy (Blackhole)",
+          "status": "Coming Soon",
+          "estimated_availability": "Q3 2025"
+        }
+      ]
+    },
+    {
+      "id": "sdxl-base",
+      "display_name": "SDXL Base",
+      "family": "Stable Diffusion",
+      "tasks": [
+        "Text-to-Image",
+        "Image-Generation"
+      ],
+      "compatibility": [
+        {
+          "hardware": "p100 (Blackhole)",
+          "status": "Supported"
+        },
+        {
+          "hardware": "n300 (Wormhole)",
+          "status": "Supported"
+        }
+      ]
+    },
+    {
+      "id": "whisper-large-v3",
+      "display_name": "Whisper Large v3",
+      "family": "Whisper",
+      "tasks": [
+        "Speech-to-Text",
+        "NLP"
+      ],
+      "compatibility": [
+        {
+          "hardware": "n150 (Wormhole)",
+          "status": "Supported"
+        },
+        {
+          "hardware": "QuietBox (Wormhole)",
+          "status": "Supported"
+        }
+      ]
+    },
+    {
+      "id": "whisper-medium",
+      "display_name": "Whisper Medium",
+      "family": "Whisper",
+      "tasks": [
+        "Speech-to-Text",
+        "NLP"
+      ],
+      "compatibility": [
+        {
+          "hardware": "n150 (Wormhole)",
+          "status": "Supported"
+        }
+      ]
+    },
+    {
+      "id": "resnet-50",
+      "display_name": "ResNet-50",
+      "family": "ResNet",
+      "tasks": [
+        "Vision",
+        "Image-Classification"
+      ],
+      "compatibility": [
+        {
+          "hardware": "n150 (Wormhole)",
+          "status": "Supported"
+        },
+        {
+          "hardware": "QuietBox (Wormhole)",
+          "status": "Supported"
+        }
+      ]
+    },
+    {
+      "id": "yolo-v8n",
+      "display_name": "YOLOv8 Nano",
+      "family": "YOLO",
+      "tasks": [
+        "Vision",
+        "Object-Detection"
+      ],
+      "compatibility": [
+        {
+          "hardware": "n150 (Wormhole)",
+          "status": "Supported"
+        }
+      ]
+    },
+    {
+      "id": "yolo-v8s",
+      "display_name": "YOLOv8 Small",
+      "family": "YOLO",
+      "tasks": [
+        "Vision",
+        "Object-Detection"
+      ],
+      "compatibility": [
+        {
+          "hardware": "n300 (Wormhole)",
+          "status": "Supported"
+        }
+      ]
+    },
+    {
+      "id": "bert-large",
+      "display_name": "BERT Large",
+      "family": "BERT",
+      "tasks": [
+        "NLP",
+        "Text-Classification"
+      ],
+      "compatibility": [
+        {
+          "hardware": "n150 (Wormhole)",
+          "status": "Supported"
+        },
+        {
+          "hardware": "QuietBox (Wormhole)",
+          "status": "Coming Soon",
+          "estimated_availability": "Q2 2025"
+        }
+      ]
+    },
+    {
+      "id": "mistral-7b",
+      "display_name": "Mistral 7B",
+      "family": "Mistral",
+      "tasks": [
+        "LLM",
+        "Text-Generation"
+      ],
+      "compatibility": [
+        {
+          "hardware": "n300 (Wormhole)",
+          "status": "Supported"
+        },
+        {
+          "hardware": "p100 (Blackhole)",
+          "status": "Supported"
+        }
+      ]
+    },
+    {
+      "id": "phi-3-mini",
+      "display_name": "Phi-3 Mini",
+      "family": "Phi",
+      "tasks": [
+        "LLM",
+        "Text-Generation"
+      ],
+      "compatibility": [
+        {
+          "hardware": "n150 (Wormhole)",
+          "status": "Supported"
+        },
+        {
+          "hardware": "QuietBox (Wormhole)",
+          "status": "Supported"
+        }
+      ]
+    },
+    {
+      "id": "flux-1-dev",
+      "display_name": "FLUX.1 Dev",
+      "family": "FLUX",
+      "tasks": [
+        "Text-to-Image",
+        "Image-Generation"
+      ],
+      "compatibility": [
+        {
+          "hardware": "p300 (Blackhole)",
+          "status": "Coming Soon",
+          "estimated_availability": "Q2 2025"
+        },
+        {
+          "hardware": "2 × p150 (Blackhole)",
+          "status": "Coming Soon",
+          "estimated_availability": "Q3 2025"
+        }
+      ]
+    }
+  ]
+}
