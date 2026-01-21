@@ -1,0 +1,31 @@
+#	Metric	Metric Name	Category	Description
+1	accuracy_check	Accuracy Check	Quality Metrics	Binary check or score indicating whether the model output meets accuracy requirements
+2	average_clip	Average CLIP	Quality Metrics	Average gradient clipping value used during model training or inference
+3	fid_score	FID Score	Quality Metrics	Fréchet Inception Distance score - measures quality of generated images by comparing statistical similarity to real images
+4	gpu_reference_score	GPU Reference Score	Comparison Metrics	Baseline performance score measured on a reference GPU configuration
+5	mean_e2el_ms	Mean E2E Latency (ms)	Latency Metrics	Mean end-to-end latency in milliseconds - average total time from request submission to complete response
+6	mean_tpot_ms	Mean TPOT (ms)	Latency Metrics	Mean Time Per Output Token in milliseconds - average time to generate each output token
+7	mean_tps	Mean TPS	Throughput Metrics	Mean Tokens Per Second - average rate of token generation
+8	mean_ttft_ms	Mean TTFT (ms)	Latency Metrics	Mean Time To First Token in milliseconds - average time from request to first token generated
+9	num_prompts	Number of Prompts	Volume Metrics	Total number of prompts or input queries processed during the benchmark
+10	num_requests	Number of Requests	Volume Metrics	Total number of requests sent to the model during the benchmark
+11	published_score	Published Score	Comparison Metrics	Official published benchmark score for comparison purposes
+12	ratio_to_published	Ratio to Published	Comparison Metrics	Ratio of achieved score to the published benchmark score - performance comparison metric
+13	ratio_to_reference	Ratio to Reference	Comparison Metrics	Ratio of achieved score to the reference score - relative performance metric
+14	request_throughput	Request Throughput	Throughput Metrics	Number of requests processed per unit of time
+15	score	Score	Quality Metrics	General performance or quality score for the model run
+16	std_tpot_ms	Std Dev TPOT (ms)	Latency Metrics	Standard deviation of Time Per Output Token in milliseconds - variability in token generation time
+17	std_tps	Std Dev TPS	Throughput Metrics	Standard deviation of Tokens Per Second - variability in token generation rate
+18	std_ttft_ms	Std Dev TTFT (ms)	Latency Metrics	Standard deviation of Time To First Token in milliseconds - variability in first token latency
+19	total_input_tokens	Total Input Tokens	Token Metrics	Total count of all input tokens processed across all requests
+20	total_output_tokens	Total Output Tokens	Token Metrics	Total count of all output tokens generated across all requests
+21	tps_decode_throughput	TPS Decode Throughput	Throughput Metrics	Tokens Per Second during the decode phase - generation speed for output tokens
+22	tps_prefill_throughput	TPS Prefill Throughput	Throughput Metrics	Tokens Per Second during the prefill phase - processing speed for input tokens
+23	tput	Throughput	Throughput Metrics	Throughput - general measure of processing rate
+24	tput_check	Throughput Check	Validation Checks	Binary check or validation flag for throughput requirements
+25	tput_user	User Throughput	Throughput Metrics	User-experienced throughput - throughput from the end user perspective
+26	tput_user_check	User Throughput Check	Validation Checks	Binary check or validation flag for user-experienced throughput requirements
+27	tput_user_ratio	User Throughput Ratio	Comparison Metrics	Ratio of user-experienced throughput to expected or baseline throughput
+28	ttft	TTFT	Latency Metrics	Time To First Token - latency from request to first token (alternative naming)
+29	ttft_check	TTFT Check	Validation Checks	Binary check or validation flag for Time To First Token requirements
+30	ttft_ratio	TTFT Ratio	Comparison Metrics	Ratio of achieved TTFT to expected or baseline TTFT

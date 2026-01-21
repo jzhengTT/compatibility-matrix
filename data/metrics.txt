@@ -1,0 +1,144 @@
+COMPATIBILITY MATRIX - COMPLETE METRIC DEFINITIONS
+================================================================================
+
+Total Metrics: 30
+
+================================================================================
+
+1. accuracy_check
+   Binary check or score indicating whether the model output meets accuracy requirements
+
+2. average_clip
+   Average gradient clipping value used during model training or inference
+
+3. fid_score
+   Fréchet Inception Distance score - measures quality of generated images by comparing statistical similarity to real images
+
+4. gpu_reference_score
+   Baseline performance score measured on a reference GPU configuration
+
+5. mean_e2el_ms
+   Mean end-to-end latency in milliseconds - average total time from request submission to complete response
+
+6. mean_tpot_ms
+   Mean Time Per Output Token in milliseconds - average time to generate each output token
+
+7. mean_tps
+   Mean Tokens Per Second - average rate of token generation
+
+8. mean_ttft_ms
+   Mean Time To First Token in milliseconds - average time from request to first token generated
+
+9. num_prompts
+   Total number of prompts or input queries processed during the benchmark
+
+10. num_requests
+   Total number of requests sent to the model during the benchmark
+
+11. published_score
+   Official published benchmark score for comparison purposes
+
+12. ratio_to_published
+   Ratio of achieved score to the published benchmark score - performance comparison metric
+
+13. ratio_to_reference
+   Ratio of achieved score to the reference score - relative performance metric
+
+14. request_throughput
+   Number of requests processed per unit of time
+
+15. score
+   General performance or quality score for the model run
+
+16. std_tpot_ms
+   Standard deviation of Time Per Output Token in milliseconds - variability in token generation time
+
+17. std_tps
+   Standard deviation of Tokens Per Second - variability in token generation rate
+
+18. std_ttft_ms
+   Standard deviation of Time To First Token in milliseconds - variability in first token latency
+
+19. total_input_tokens
+   Total count of all input tokens processed across all requests
+
+20. total_output_tokens
+   Total count of all output tokens generated across all requests
+
+21. tps_decode_throughput
+   Tokens Per Second during the decode phase - generation speed for output tokens
+
+22. tps_prefill_throughput
+   Tokens Per Second during the prefill phase - processing speed for input tokens
+
+23. tput
+   Throughput - general measure of processing rate
+
+24. tput_check
+   Binary check or validation flag for throughput requirements
+
+25. tput_user
+   User-experienced throughput - throughput from the end user perspective
+
+26. tput_user_check
+   Binary check or validation flag for user-experienced throughput requirements
+
+27. tput_user_ratio
+   Ratio of user-experienced throughput to expected or baseline throughput
+
+28. ttft
+   Time To First Token - latency from request to first token (alternative naming)
+
+29. ttft_check
+   Binary check or validation flag for Time To First Token requirements
+
+30. ttft_ratio
+   Ratio of achieved TTFT to expected or baseline TTFT
+
+================================================================================
+METRICS BY CATEGORY
+================================================================================
+
+Latency Metrics:
+  - mean_e2el_ms
+  - mean_tpot_ms
+  - mean_ttft_ms
+  - std_tpot_ms
+  - std_ttft_ms
+  - ttft
+
+Throughput Metrics:
+  - mean_tps
+  - std_tps
+  - request_throughput
+  - tps_decode_throughput
+  - tps_prefill_throughput
+  - tput
+  - tput_user
+
+Token Metrics:
+  - total_input_tokens
+  - total_output_tokens
+
+Volume Metrics:
+  - num_prompts
+  - num_requests
+
+Quality Metrics:
+  - accuracy_check
+  - average_clip
+  - fid_score
+  - score
+
+Comparison Metrics:
+  - gpu_reference_score
+  - published_score
+  - ratio_to_published
+  - ratio_to_reference
+  - tput_user_ratio
+  - ttft_ratio
+
+Validation Checks:
+  - tput_check
+  - tput_user_check
+  - ttft_check

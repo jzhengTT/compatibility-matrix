@@ -11,7 +11,7 @@ Configuration (device mappings, task mappings, etc.) is in config.py
 import json
 import os
 from datetime import datetime, timezone
-from typing import Dict, Set, Tuple
+from typing import Dict, Set
 
 import pandas as pd
 
@@ -86,6 +86,35 @@ def print_summary(
             print(f"  - {device}")
 
 
+def get_performance_metrics(df: pd.DataFrame, model_name: str, device_name: str) -> Dict:
+    """Extract performance metrics for a model-device pair."""
+    # Define the metrics we want to include
+    target_metrics = ['mean_ttft_ms', 'ttft', 'mean_tps', 'accuracy_check']
+
+    # Filter data for this specific model-device combination
+    pair_data = df[
+        (df['ml_model_name'] == model_name) &
+        (df['device_name'] == device_name) &
+        (df['metric_name'].isin(target_metrics)) &
+        (df['metric_value'].notna())
+    ]
+
+    metrics = {}
+    for _, row in pair_data.iterrows():
+        metric_name = row['metric_name']
+        metric_value = row['metric_value']
+
+        # Convert metric value to appropriate type
+        if metric_name == 'accuracy_check':
+            # Treat non-zero values as True, zero/null as False
+            metrics[metric_name] = bool(metric_value != 0)
+        else:
+            # Keep numeric metrics as numbers
+            metrics[metric_name] = float(metric_value)
+
+    return metrics
+
+
 def convert_excel_to_json(excel_path: str, output_path: str) -> None:
     """Convert compatibility Excel file to JSON format."""
     print(f"Reading {excel_path}...")
@@ -94,38 +123,41 @@ def convert_excel_to_json(excel_path: str, output_path: str) -> None:
     # Filter out rows with null model or device names
     df = df[df['ml_model_name'].notna() & df['device_name'].notna()]
 
-    # Get all model-device combinations
-    all_combinations = df[['ml_model_name', 'device_name']].drop_duplicates()
+    # Get unique model names from the data
+    unique_model_names: Set[str] = set(df['ml_model_name'].unique())
 
-    # Filter for valid compatibility data (non-zero and non-null metrics)
-    valid_data = df[(df['metric_value'].notna()) & (df['metric_value'] != 0)]
-
-    # Get unique model-device combinations that are supported
-    supported_combinations: Set[Tuple[str, str]] = set(
-        tuple(row) for row in valid_data[['ml_model_name', 'device_name']].drop_duplicates().values
-    )
-
-    # Collect unique names for summary
-    unique_model_names: Set[str] = set(all_combinations['ml_model_name'])
-    unique_device_names: Set[str] = set(all_combinations['device_name'])
+    # Get unique device names from the data
+    unique_device_names: Set[str] = set(df['device_name'].unique())
 
     # Build models dictionary
     models_dict: Dict[str, Dict] = {}
 
-    for _, row in all_combinations.iterrows():
-        model_name = row['ml_model_name']
-        device_name = row['device_name']
+    total_supported = 0
+    total_not_supported = 0
 
-        if model_name not in models_dict:
-            models_dict[model_name] = create_model_entry(model_name)
+    # For each model, create entries for ALL hardware platforms
+    for model_name in unique_model_names:
+        models_dict[model_name] = create_model_entry(model_name)
 
-        is_supported = (model_name, device_name) in supported_combinations
-        hardware_name = DEVICE_MAPPING.get(device_name, device_name)
+        # Create an entry for each hardware platform
+        for device_name, hardware_name in DEVICE_MAPPING.items():
+            # Get performance metrics for this model-device pair
+            metrics = get_performance_metrics(df, model_name, device_name)
 
-        models_dict[model_name]['compatibility'].append({
-            'hardware': hardware_name,
-            'status': 'Supported' if is_supported else 'Not Supported',
-        })
+            # Build compatibility entry
+            compatibility_entry = {
+                'hardware': hardware_name,
+                'status': 'Supported' if metrics else 'Not Supported',
+            }
+
+            # Add metrics if available
+            if metrics:
+                compatibility_entry['metrics'] = metrics
+                total_supported += 1
+            else:
+                total_not_supported += 1
+
+            models_dict[model_name]['compatibility'].append(compatibility_entry)
 
     # Sort models by ID for consistent output
     models_list = sorted(models_dict.values(), key=lambda x: x['id'])
@@ -142,9 +174,6 @@ def convert_excel_to_json(excel_path: str, output_path: str) -> None:
     print(f"Writing to {output_path}...")
     with open(output_path, 'w') as f:
         json.dump(output_data, f, indent=2)
-
-    total_supported = len(supported_combinations)
-    total_not_supported = len(all_combinations) - total_supported
 
     print_summary(
         unique_model_names,

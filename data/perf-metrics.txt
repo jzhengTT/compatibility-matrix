@@ -1,0 +1,99 @@
+USER-FACING PERFORMANCE METRICS
+================================================================================
+
+These metrics directly impact user experience and model performance.
+
+Total User-Facing Performance Metrics: 16
+
+================================================================================
+
+LATENCY & RESPONSIVENESS
+--------------------------------------------------------------------------------
+
+1. mean_e2el_ms
+   Mean end-to-end latency - total time from request to complete response (lower is better)
+
+2. mean_ttft_ms
+   Mean time to first token - how quickly the model starts responding (lower is better)
+
+3. ttft
+   Time to first token - user-perceived responsiveness (lower is better)
+
+4. mean_tpot_ms
+   Mean time per output token - generation speed per token (lower is better)
+
+5. std_ttft_ms
+   Variability in time to first token - consistency of initial response time (lower is better)
+
+6. std_tpot_ms
+   Variability in time per output token - consistency of generation speed (lower is better)
+
+THROUGHPUT & SPEED
+--------------------------------------------------------------------------------
+
+1. mean_tps
+   Mean tokens per second - overall generation speed (higher is better)
+
+2. tps_decode_throughput
+   Token generation speed during decode phase (higher is better)
+
+3. tps_prefill_throughput
+   Input processing speed during prefill phase (higher is better)
+
+4. tput
+   Overall throughput - processing rate (higher is better)
+
+5. tput_user
+   User-experienced throughput - actual throughput from user perspective (higher is better)
+
+6. request_throughput
+   Requests processed per unit time - system capacity (higher is better)
+
+7. std_tps
+   Variability in tokens per second - consistency of generation speed (lower is better)
+
+QUALITY & ACCURACY
+--------------------------------------------------------------------------------
+
+1. accuracy_check
+   Model output accuracy validation - correctness of results
+
+2. fid_score
+   Image generation quality score (lower is better for image models)
+
+3. score
+   General performance/quality score
+
+================================================================================
+EXCLUDED METRICS (Internal/Reference Only)
+================================================================================
+
+The following metrics are useful for benchmarking and validation but are
+not direct performance indicators for end users:
+
+  - average_clip: Training parameter - not relevant to inference performance
+  - gpu_reference_score: Internal benchmark reference
+  - num_prompts: Volume metric - not a performance indicator
+  - num_requests: Volume metric - not a performance indicator
+  - published_score: External reference for comparison
+  - ratio_to_published: Internal comparison metric
+  - ratio_to_reference: Internal comparison metric
+  - total_input_tokens: Volume metric - informational only
+  - total_output_tokens: Volume metric - informational only
+  - tput_check: Validation flag - binary check
+  - tput_user_check: Validation flag - binary check
+  - tput_user_ratio: Internal comparison metric
+  - ttft_check: Validation flag - binary check
+  - ttft_ratio: Internal comparison metric
+
+================================================================================
+KEY PERFORMANCE INDICATORS (KPIs) SUMMARY
+================================================================================
+
+For most users, the most important metrics are:
+
+1. mean_ttft_ms - How fast the model starts responding
+2. mean_tps - How fast the model generates tokens
+3. mean_e2el_ms - Total response time
+4. accuracy_check / score - Quality of outputs
+5. std_ttft_ms / std_tps - Consistency of performance
