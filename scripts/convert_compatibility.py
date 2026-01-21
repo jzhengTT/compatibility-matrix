@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Convert compatibility.xlsx to JSON format following the mock-model-data.json schema.
+Convert database compatibility data to JSON format following the mock-model-data.json schema.
 Only includes compatibility information, no performance metrics.
 A model-device pair is "Supported" if it has any non-zero, non-null metric,
 otherwise it is marked as "Not Supported".
@@ -16,6 +16,7 @@ from typing import Dict, Set
 import pandas as pd
 
 from config import DEVICE_MAPPING, MODELS_CONFIG
+from db_config import execute_query
 
 
 def create_model_id(model_name: str) -> str:
@@ -115,6 +116,33 @@ def get_performance_metrics(df: pd.DataFrame, model_name: str, device_name: str)
     return metrics
 
 
+def load_data_from_database() -> pd.DataFrame:
+    """
+    Load compatibility data from database using the SQL query.
+
+    Returns:
+        DataFrame with columns: ml_model_name, device_name, metric_name, metric_value
+    """
+    print("Fetching data from database...")
+
+    # Execute query
+    results = execute_query('fetch_compatibility_data.sql')
+
+    # Convert results to DataFrame
+    df = pd.DataFrame(results)
+
+    if df.empty:
+        print("Warning: No data returned from database")
+        return df
+
+    print(f"Loaded {len(df)} rows from database")
+
+    # Filter out rows with null model or device names
+    df = df[df['ml_model_name'].notna() & df['device_name'].notna()]
+
+    return df
+
+
 def convert_excel_to_json(excel_path: str, output_path: str) -> None:
     """Convert compatibility Excel file to JSON format."""
     print(f"Reading {excel_path}...")
@@ -185,11 +213,103 @@ def convert_excel_to_json(excel_path: str, output_path: str) -> None:
     )
 
 
+def convert_database_to_json(output_path: str) -> None:
+    """
+    Convert database compatibility data to JSON format.
+
+    Args:
+        output_path: Path to write the JSON output
+    """
+    # Load data from database
+    df = load_data_from_database()
+
+    if df.empty:
+        print("No data to process. Exiting.")
+        return
+
+    # Get unique model names from the data
+    unique_model_names: Set[str] = set(df['ml_model_name'].unique())
+
+    # Get unique device names from the data
+    unique_device_names: Set[str] = set(df['device_name'].unique())
+
+    # Build models dictionary
+    models_dict: Dict[str, Dict] = {}
+
+    total_supported = 0
+    total_not_supported = 0
+
+    # For each model, create entries for ALL hardware platforms
+    for model_name in unique_model_names:
+        models_dict[model_name] = create_model_entry(model_name)
+
+        # Create an entry for each hardware platform
+        for device_name, hardware_name in DEVICE_MAPPING.items():
+            # Get performance metrics for this model-device pair
+            metrics = get_performance_metrics(df, model_name, device_name)
+
+            # Build compatibility entry
+            compatibility_entry = {
+                'hardware': hardware_name,
+                'status': 'Supported' if metrics else 'Not Supported',
+            }
+
+            # Add metrics if available
+            if metrics:
+                compatibility_entry['metrics'] = metrics
+                total_supported += 1
+            else:
+                total_not_supported += 1
+
+            models_dict[model_name]['compatibility'].append(compatibility_entry)
+
+    # Sort models by ID for consistent output
+    models_list = sorted(models_dict.values(), key=lambda x: x['id'])
+
+    output_data = {
+        'metadata': {
+            'generated_at': datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
+            'source': 'database',
+            'schema_version': '1.0',
+        },
+        'models': models_list,
+    }
+
+    print(f"Writing to {output_path}...")
+    with open(output_path, 'w') as f:
+        json.dump(output_data, f, indent=2)
+
+    print_summary(
+        unique_model_names,
+        unique_device_names,
+        total_supported,
+        total_not_supported,
+        len(models_list),
+        output_path,
+    )
+
+
 if __name__ == '__main__':
+    import sys
+
     script_dir = os.path.dirname(os.path.abspath(__file__))
     project_root = os.path.dirname(script_dir)
+    output_path = os.path.join(project_root, 'data', 'compatibility.json')
 
-    convert_excel_to_json(
-        excel_path=os.path.join(project_root, 'data', 'compatibility.xlsx'),
-        output_path=os.path.join(project_root, 'data', 'compatibility.json'),
-    )
+    # Determine which data source to use based on command line args
+    if len(sys.argv) > 1 and sys.argv[1] == '--excel':
+        # Use Excel file (legacy mode)
+        print("Using Excel file as data source...")
+        convert_excel_to_json(
+            excel_path=os.path.join(project_root, 'data', 'compatibility.xlsx'),
+            output_path=output_path,
+        )
+    else:
+        # Use database (default)
+        print("Using database as data source...")
+        print("To use Excel instead, run: python3 scripts/convert_compatibility.py --excel")
+        print()
+
+        # Optional: Parse additional filters from command line
+        # You can extend this to accept --start-date, --end-date, etc.
+        convert_database_to_json(output_path=output_path)

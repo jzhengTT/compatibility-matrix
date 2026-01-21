@@ -33,3 +33,6 @@ __pycache__/
 venv/
 ENV/
 env/
+
+# Environment variables (database credentials)
+.env

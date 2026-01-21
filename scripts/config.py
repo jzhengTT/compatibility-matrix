@@ -16,6 +16,7 @@ DEVICE_MAPPING = {
     'n300': 'n300 (Wormhole)',
     'p150x4': 'Quietbox (Blackhole)',
     't3k': 'Loudbox (Wormhole)',
+    'p100': 'p100 (Blackhole)'
 }
 
 # Consolidated model configuration - all model info in one place

@@ -1,44 +1,10 @@
 {
   "metadata": {
-    "generated_at": "2026-01-21T18:03:40Z",
-    "source": "compatibility.xlsx",
+    "generated_at": "2026-01-21T19:34:37Z",
+    "source": "database",
     "schema_version": "1.0"
   },
   "models": [
-    {
-      "id": "bge-large-en-v1-5",
-      "display_name": "BGE Large EN v1.5",
-      "family": "BGE",
-      "tasks": [
-        "NLP",
-        "Embedding"
-      ],
-      "compatibility": [
-        {
-          "hardware": "Galaxy (Wormhole)",
-          "status": "Not Supported"
-        },
-        {
-          "hardware": "n150 (Wormhole)",
-          "status": "Supported",
-          "metrics": {
-            "mean_tps": 46489.1
-          }
-        },
-        {
-          "hardware": "n300 (Wormhole)",
-          "status": "Not Supported"
-        },
-        {
-          "hardware": "Quietbox (Blackhole)",
-          "status": "Not Supported"
-        },
-        {
-          "hardware": "Loudbox (Wormhole)",
-          "status": "Not Supported"
-        }
-      ]
-    },
     {
       "id": "efficientnet",
       "display_name": "EfficientNet",
@@ -56,7 +22,8 @@
           "hardware": "n150 (Wormhole)",
           "status": "Supported",
           "metrics": {
-            "mean_ttft_ms": 1743.5
+            "mean_ttft_ms": 928.4,
+            "ttft": 0.05
           }
         },
         {
@@ -69,6 +36,10 @@
         },
         {
           "hardware": "Loudbox (Wormhole)",
+          "status": "Not Supported"
+        },
+        {
+          "hardware": "p100 (Blackhole)",
           "status": "Not Supported"
         }
       ]
@@ -101,36 +72,9 @@
         {
           "hardware": "Loudbox (Wormhole)",
           "status": "Not Supported"
-        }
-      ]
-    },
-    {
-      "id": "gemma-3-4b-it",
-      "display_name": "Gemma 3 4B IT",
-      "family": "Gemma",
-      "tasks": [
-        "LLM",
-        "Text-Generation"
-      ],
-      "compatibility": [
-        {
-          "hardware": "Galaxy (Wormhole)",
-          "status": "Not Supported"
         },
         {
-          "hardware": "n150 (Wormhole)",
-          "status": "Not Supported"
-        },
-        {
-          "hardware": "n300 (Wormhole)",
-          "status": "Not Supported"
-        },
-        {
-          "hardware": "Quietbox (Blackhole)",
-          "status": "Not Supported"
-        },
-        {
-          "hardware": "Loudbox (Wormhole)",
+          "hardware": "p100 (Blackhole)",
           "status": "Not Supported"
         }
       ]
@@ -164,10 +108,15 @@
           "hardware": "Loudbox (Wormhole)",
           "status": "Supported",
           "metrics": {
-            "mean_ttft_ms": 13994.1,
-            "mean_tps": 38.08,
+            "mean_ttft_ms": 14262.7,
+            "mean_tps": 43.19,
+            "ttft": 23.0,
             "accuracy_check": true
           }
+        },
+        {
+          "hardware": "p100 (Blackhole)",
+          "status": "Not Supported"
         }
       ]
     },
@@ -200,6 +149,10 @@
         {
           "hardware": "Loudbox (Wormhole)",
           "status": "Not Supported"
+        },
+        {
+          "hardware": "p100 (Blackhole)",
+          "status": "Not Supported"
         }
       ]
     },
@@ -220,8 +173,9 @@
           "hardware": "n150 (Wormhole)",
           "status": "Supported",
           "metrics": {
-            "mean_tps": 56.97,
-            "mean_ttft_ms": 42.0,
+            "mean_tps": 58.37,
+            "mean_ttft_ms": 43.7,
+            "ttft": 6.0,
             "accuracy_check": true
           }
         },
@@ -229,8 +183,9 @@
           "hardware": "n300 (Wormhole)",
           "status": "Supported",
           "metrics": {
-            "mean_tps": 35.79,
-            "mean_ttft_ms": 7094.5,
+            "mean_tps": 22.83,
+            "mean_ttft_ms": 11777.9,
+            "ttft": 6.0,
             "accuracy_check": true
           }
         },
@@ -242,10 +197,15 @@
           "hardware": "Loudbox (Wormhole)",
           "status": "Supported",
           "metrics": {
-            "mean_tps": 72.24,
-            "mean_ttft_ms": 1917.3,
+            "mean_tps": 78.86,
+            "mean_ttft_ms": 26.9,
+            "ttft": 6.0,
             "accuracy_check": true
           }
+        },
+        {
+          "hardware": "p100 (Blackhole)",
+          "status": "Not Supported"
         }
       ]
     },
@@ -268,12 +228,7 @@
         },
         {
           "hardware": "n300 (Wormhole)",
-          "status": "Supported",
-          "metrics": {
-            "mean_ttft_ms": 8878.1,
-            "mean_tps": 10.04,
-            "accuracy_check": true
-          }
+          "status": "Not Supported"
         },
         {
           "hardware": "Quietbox (Blackhole)",
@@ -283,10 +238,15 @@
           "hardware": "Loudbox (Wormhole)",
           "status": "Supported",
           "metrics": {
-            "mean_ttft_ms": 3536.9,
-            "mean_tps": 26.19,
+            "mean_ttft_ms": 3554.3,
+            "mean_tps": 26.37,
+            "ttft": 17.0,
             "accuracy_check": true
           }
+        },
+        {
+          "hardware": "p100 (Blackhole)",
+          "status": "Not Supported"
         }
       ]
     },
@@ -319,6 +279,10 @@
         {
           "hardware": "Loudbox (Wormhole)",
           "status": "Not Supported"
+        },
+        {
+          "hardware": "p100 (Blackhole)",
+          "status": "Not Supported"
         }
       ]
     },
@@ -350,6 +314,10 @@
         {
           "hardware": "Loudbox (Wormhole)",
           "status": "Not Supported"
+        },
+        {
+          "hardware": "p100 (Blackhole)",
+          "status": "Not Supported"
         }
       ]
     },
@@ -368,21 +336,11 @@
         },
         {
           "hardware": "n150 (Wormhole)",
-          "status": "Supported",
-          "metrics": {
-            "mean_ttft_ms": 592.2,
-            "mean_tps": 20.94,
-            "accuracy_check": true
-          }
+          "status": "Not Supported"
         },
         {
           "hardware": "n300 (Wormhole)",
-          "status": "Supported",
-          "metrics": {
-            "mean_ttft_ms": 83.0,
-            "mean_tps": 41.86,
-            "accuracy_check": true
-          }
+          "status": "Not Supported"
         },
         {
           "hardware": "Quietbox (Blackhole)",
@@ -390,6 +348,10 @@
         },
         {
           "hardware": "Loudbox (Wormhole)",
+          "status": "Not Supported"
+        },
+        {
+          "hardware": "p100 (Blackhole)",
           "status": "Not Supported"
         }
       ]
@@ -411,7 +373,8 @@
           "hardware": "n150 (Wormhole)",
           "status": "Supported",
           "metrics": {
-            "mean_ttft_ms": 429.9
+            "mean_ttft_ms": 656.3,
+            "ttft": 0.6
           }
         },
         {
@@ -424,6 +387,10 @@
         },
         {
           "hardware": "Loudbox (Wormhole)",
+          "status": "Not Supported"
+        },
+        {
+          "hardware": "p100 (Blackhole)",
           "status": "Not Supported"
         }
       ]
@@ -456,36 +423,9 @@
         {
           "hardware": "Loudbox (Wormhole)",
           "status": "Not Supported"
-        }
-      ]
-    },
-    {
-      "id": "qwen2-5-7b-instruct",
-      "display_name": "Qwen 2.5 7B Instruct",
-      "family": "Qwen",
-      "tasks": [
-        "LLM",
-        "Text-Generation"
-      ],
-      "compatibility": [
-        {
-          "hardware": "Galaxy (Wormhole)",
-          "status": "Not Supported"
         },
         {
-          "hardware": "n150 (Wormhole)",
-          "status": "Not Supported"
-        },
-        {
-          "hardware": "n300 (Wormhole)",
-          "status": "Not Supported"
-        },
-        {
-          "hardware": "Quietbox (Blackhole)",
-          "status": "Not Supported"
-        },
-        {
-          "hardware": "Loudbox (Wormhole)",
+          "hardware": "p100 (Blackhole)",
           "status": "Not Supported"
         }
       ]
@@ -519,6 +459,10 @@
         {
           "hardware": "Loudbox (Wormhole)",
           "status": "Not Supported"
+        },
+        {
+          "hardware": "p100 (Blackhole)",
+          "status": "Not Supported"
         }
       ]
     },
@@ -550,6 +494,10 @@
         },
         {
           "hardware": "Loudbox (Wormhole)",
+          "status": "Not Supported"
+        },
+        {
+          "hardware": "p100 (Blackhole)",
           "status": "Not Supported"
         }
       ]
@@ -583,6 +531,10 @@
         {
           "hardware": "Loudbox (Wormhole)",
           "status": "Not Supported"
+        },
+        {
+          "hardware": "p100 (Blackhole)",
+          "status": "Not Supported"
         }
       ]
     },
@@ -614,6 +566,10 @@
         },
         {
           "hardware": "Loudbox (Wormhole)",
+          "status": "Not Supported"
+        },
+        {
+          "hardware": "p100 (Blackhole)",
           "status": "Not Supported"
         }
       ]
@@ -647,10 +603,15 @@
           "hardware": "Loudbox (Wormhole)",
           "status": "Supported",
           "metrics": {
-            "mean_ttft_ms": 15822.8,
-            "mean_tps": 11.03,
+            "mean_tps": 20.98,
+            "mean_ttft_ms": 365.8,
+            "ttft": 62.0,
             "accuracy_check": true
           }
+        },
+        {
+          "hardware": "p100 (Blackhole)",
+          "status": "Not Supported"
         }
       ]
     },
@@ -667,56 +628,15 @@
           "hardware": "Galaxy (Wormhole)",
           "status": "Supported",
           "metrics": {
-            "mean_tps": 9.92,
-            "mean_ttft_ms": 4537.8
-          }
-        },
-        {
-          "hardware": "n150 (Wormhole)",
-          "status": "Not Supported"
-        },
-        {
-          "hardware": "n300 (Wormhole)",
-          "status": "Supported",
-          "metrics": {
-            "mean_ttft_ms": 506.3,
-            "mean_tps": 26.79
-          }
-        },
-        {
-          "hardware": "Quietbox (Blackhole)",
-          "status": "Not Supported"
-        },
-        {
-          "hardware": "Loudbox (Wormhole)",
-          "status": "Supported",
-          "metrics": {
-            "mean_tps": 43.3,
-            "mean_ttft_ms": 51.2,
+            "mean_tps": 11.15,
+            "mean_ttft_ms": 2289.4,
+            "ttft": 22.0,
             "accuracy_check": true
           }
-        }
-      ]
-    },
-    {
-      "id": "qwen3-embedding-4b",
-      "display_name": "Qwen 3 Embedding 4B",
-      "family": "Qwen",
-      "tasks": [
-        "NLP",
-        "Embedding"
-      ],
-      "compatibility": [
-        {
-          "hardware": "Galaxy (Wormhole)",
-          "status": "Not Supported"
         },
         {
           "hardware": "n150 (Wormhole)",
-          "status": "Supported",
-          "metrics": {
-            "mean_tps": 1171.45
-          }
+          "status": "Not Supported"
         },
         {
           "hardware": "n300 (Wormhole)",
@@ -728,6 +648,16 @@
         },
         {
           "hardware": "Loudbox (Wormhole)",
+          "status": "Supported",
+          "metrics": {
+            "mean_tps": 42.61,
+            "mean_ttft_ms": 55.2,
+            "ttft": 22.0,
+            "accuracy_check": true
+          }
+        },
+        {
+          "hardware": "p100 (Blackhole)",
           "status": "Not Supported"
         }
       ]
@@ -761,10 +691,15 @@
           "hardware": "Loudbox (Wormhole)",
           "status": "Supported",
           "metrics": {
-            "mean_ttft_ms": 2911.2,
-            "mean_tps": 21.79,
+            "mean_ttft_ms": 108.7,
+            "mean_tps": 22.32,
+            "ttft": 63.0,
             "accuracy_check": true
           }
+        },
+        {
+          "hardware": "p100 (Blackhole)",
+          "status": "Not Supported"
         }
       ]
     },
@@ -785,7 +720,8 @@
           "hardware": "n150 (Wormhole)",
           "status": "Supported",
           "metrics": {
-            "mean_ttft_ms": 153.9
+            "mean_ttft_ms": 79.1,
+            "ttft": 0.05
           }
         },
         {
@@ -798,6 +734,10 @@
         },
         {
           "hardware": "Loudbox (Wormhole)",
+          "status": "Not Supported"
+        },
+        {
+          "hardware": "p100 (Blackhole)",
           "status": "Not Supported"
         }
       ]
@@ -819,7 +759,8 @@
           "hardware": "n150 (Wormhole)",
           "status": "Supported",
           "metrics": {
-            "mean_ttft_ms": 260.9
+            "mean_ttft_ms": 143.2,
+            "ttft": 0.05
           }
         },
         {
@@ -833,83 +774,9 @@
         {
           "hardware": "Loudbox (Wormhole)",
           "status": "Not Supported"
-        }
-      ]
-    },
-    {
-      "id": "stable-diffusion-3-5-large",
-      "display_name": "Stable Diffusion 3.5 Large",
-      "family": "Stable Diffusion",
-      "tasks": [
-        "Text-to-Image",
-        "Image-Generation"
-      ],
-      "compatibility": [
-        {
-          "hardware": "Galaxy (Wormhole)",
-          "status": "Supported",
-          "metrics": {
-            "mean_ttft_ms": 5634.5,
-            "accuracy_check": true
-          }
         },
         {
-          "hardware": "n150 (Wormhole)",
-          "status": "Not Supported"
-        },
-        {
-          "hardware": "n300 (Wormhole)",
-          "status": "Not Supported"
-        },
-        {
-          "hardware": "Quietbox (Blackhole)",
-          "status": "Not Supported"
-        },
-        {
-          "hardware": "Loudbox (Wormhole)",
-          "status": "Supported",
-          "metrics": {
-            "mean_ttft_ms": 12430.5,
-            "accuracy_check": true
-          }
-        }
-      ]
-    },
-    {
-      "id": "stable-diffusion-xl-base-1-0",
-      "display_name": "Stable Diffusion XL Base 1.0",
-      "family": "Stable Diffusion",
-      "tasks": [
-        "Text-to-Image",
-        "Image-Generation"
-      ],
-      "compatibility": [
-        {
-          "hardware": "Galaxy (Wormhole)",
-          "status": "Supported",
-          "metrics": {
-            "mean_ttft_ms": 8683.4,
-            "accuracy_check": true
-          }
-        },
-        {
-          "hardware": "n150 (Wormhole)",
-          "status": "Supported",
-          "metrics": {
-            "mean_ttft_ms": 8939.9,
-            "accuracy_check": true
-          }
-        },
-        {
-          "hardware": "n300 (Wormhole)",
-          "status": "Not Supported"
-        },
-        {
-          "hardware": "Quietbox (Blackhole)",
-          "status": "Not Supported"
-        },
-        {
-          "hardware": "Loudbox (Wormhole)",
+          "hardware": "p100 (Blackhole)",
           "status": "Not Supported"
         }
       ]
@@ -929,7 +796,10 @@
         },
         {
           "hardware": "n150 (Wormhole)",
-          "status": "Not Supported"
+          "status": "Supported",
+          "metrics": {
+            "ttft": 0.05
+          }
         },
         {
           "hardware": "n300 (Wormhole)",
@@ -941,6 +811,10 @@
         },
         {
           "hardware": "Loudbox (Wormhole)",
+          "status": "Not Supported"
+        },
+        {
+          "hardware": "p100 (Blackhole)",
           "status": "Not Supported"
         }
       ]
@@ -962,7 +836,8 @@
           "hardware": "n150 (Wormhole)",
           "status": "Supported",
           "metrics": {
-            "mean_ttft_ms": 141.3
+            "mean_ttft_ms": 144.7,
+            "ttft": 0.05
           }
         },
         {
@@ -975,6 +850,10 @@
         },
         {
           "hardware": "Loudbox (Wormhole)",
+          "status": "Not Supported"
+        },
+        {
+          "hardware": "p100 (Blackhole)",
           "status": "Not Supported"
         }
       ]
@@ -996,7 +875,8 @@
           "hardware": "n150 (Wormhole)",
           "status": "Supported",
           "metrics": {
-            "mean_ttft_ms": 52.2
+            "mean_ttft_ms": 40.0,
+            "ttft": 0.05
           }
         },
         {
@@ -1010,42 +890,9 @@
         {
           "hardware": "Loudbox (Wormhole)",
           "status": "Not Supported"
-        }
-      ]
-    },
-    {
-      "id": "whisper-large-v3",
-      "display_name": "Whisper Large v3",
-      "family": "Whisper",
-      "tasks": [
-        "Speech-to-Text",
-        "NLP"
-      ],
-      "compatibility": [
-        {
-          "hardware": "Galaxy (Wormhole)",
-          "status": "Supported",
-          "metrics": {
-            "mean_ttft_ms": 705.1
-          }
         },
         {
-          "hardware": "n150 (Wormhole)",
-          "status": "Supported",
-          "metrics": {
-            "mean_ttft_ms": 627.9
-          }
-        },
-        {
-          "hardware": "n300 (Wormhole)",
-          "status": "Not Supported"
-        },
-        {
-          "hardware": "Quietbox (Blackhole)",
-          "status": "Not Supported"
-        },
-        {
-          "hardware": "Loudbox (Wormhole)",
+          "hardware": "p100 (Blackhole)",
           "status": "Not Supported"
         }
       ]
