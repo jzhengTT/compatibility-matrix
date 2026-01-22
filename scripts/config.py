@@ -120,6 +120,11 @@ MODEL_MAPPING = {
         'family': 'Gemma',
         'tasks': ['LLM', 'Text-Generation']
     },
+    'gemma-3-27b-it': {
+        'display_name': 'Gemma 3 27B IT',
+        'family': 'Gemma',
+        'tasks': ['LLM', 'Text-Generation']
+    },
     'gemma-3-4b-it': {
         'display_name': 'Gemma 3 4B IT',
         'family': 'Gemma',
@@ -187,6 +192,18 @@ MODEL_MAPPING = {
         'display_name': 'Whisper Large v3',
         'family': 'Whisper',
         'tasks': ['Speech-to-Text', 'NLP']
+    },
+
+    # Video generation models
+    'mochi-1-preview': {
+        'display_name': 'Mochi 1 Preview',
+        'family': 'Mochi',
+        'tasks': ['Text-to-Video', 'Video-Generation']
+    },
+    'Wan2.2-T2V-A14B-Diffusers': {
+        'display_name': 'Wan 2.2 T2V A14B',
+        'family': 'Wan',
+        'tasks': ['Text-to-Video', 'Video-Generation']
     },
 }
 

@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-01-22T21:51:59Z",
+    "generated_at": "2026-01-22T22:18:21Z",
     "source": "database",
     "schema_version": "1.0"
   },
@@ -28,6 +28,10 @@
         },
         {
           "hardware": "Quietbox (Blackhole)",
+          "status": "Not Supported"
+        },
+        {
+          "hardware": "2 x Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
@@ -70,6 +74,10 @@
           "status": "Not Supported"
         },
         {
+          "hardware": "2 x Quietbox (Blackhole)",
+          "status": "Not Supported"
+        },
+        {
           "hardware": "Loudbox (Wormhole)",
           "status": "Not Supported"
         },
@@ -105,6 +113,49 @@
           "status": "Not Supported"
         },
         {
+          "hardware": "2 x Quietbox (Blackhole)",
+          "status": "Not Supported"
+        },
+        {
+          "hardware": "Loudbox (Wormhole)",
+          "status": "Not Supported"
+        },
+        {
+          "hardware": "p100 (Blackhole)",
+          "status": "Not Supported"
+        }
+      ]
+    },
+    {
+      "id": "gemma-3-27b-it",
+      "display_name": "Gemma 3 27B IT",
+      "family": "Gemma",
+      "tasks": [
+        "LLM",
+        "Text-Generation"
+      ],
+      "compatibility": [
+        {
+          "hardware": "Galaxy (Wormhole)",
+          "status": "Not Supported"
+        },
+        {
+          "hardware": "n150 (Wormhole)",
+          "status": "Not Supported"
+        },
+        {
+          "hardware": "n300 (Wormhole)",
+          "status": "Not Supported"
+        },
+        {
+          "hardware": "Quietbox (Blackhole)",
+          "status": "Not Supported"
+        },
+        {
+          "hardware": "2 x Quietbox (Blackhole)",
+          "status": "Not Supported"
+        },
+        {
           "hardware": "Loudbox (Wormhole)",
           "status": "Not Supported"
         },
@@ -137,6 +188,10 @@
         },
         {
           "hardware": "Quietbox (Blackhole)",
+          "status": "Not Supported"
+        },
+        {
+          "hardware": "2 x Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
@@ -181,6 +236,16 @@
           "status": "Not Supported"
         },
         {
+          "hardware": "2 x Quietbox (Blackhole)",
+          "status": "Supported",
+          "metrics": {
+            "mean_ttft_ms": 9754.7,
+            "mean_tps": 16.67,
+            "ttft": 30.0,
+            "accuracy_check": true
+          }
+        },
+        {
           "hardware": "Loudbox (Wormhole)",
           "status": "Supported",
           "metrics": {
@@ -220,6 +285,10 @@
         },
         {
           "hardware": "Quietbox (Blackhole)",
+          "status": "Not Supported"
+        },
+        {
+          "hardware": "2 x Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
@@ -264,6 +333,10 @@
           "status": "Not Supported"
         },
         {
+          "hardware": "2 x Quietbox (Blackhole)",
+          "status": "Not Supported"
+        },
+        {
           "hardware": "Loudbox (Wormhole)",
           "status": "Supported",
           "metrics": {
@@ -302,6 +375,10 @@
         },
         {
           "hardware": "Quietbox (Blackhole)",
+          "status": "Not Supported"
+        },
+        {
+          "hardware": "2 x Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
@@ -347,6 +424,10 @@
           "status": "Not Supported"
         },
         {
+          "hardware": "2 x Quietbox (Blackhole)",
+          "status": "Not Supported"
+        },
+        {
           "hardware": "Loudbox (Wormhole)",
           "status": "Not Supported"
         },
@@ -382,6 +463,10 @@
           "status": "Not Supported"
         },
         {
+          "hardware": "2 x Quietbox (Blackhole)",
+          "status": "Not Supported"
+        },
+        {
           "hardware": "Loudbox (Wormhole)",
           "status": "Not Supported"
         },
@@ -414,6 +499,10 @@
         },
         {
           "hardware": "Quietbox (Blackhole)",
+          "status": "Not Supported"
+        },
+        {
+          "hardware": "2 x Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
@@ -455,6 +544,49 @@
           "status": "Not Supported"
         },
         {
+          "hardware": "2 x Quietbox (Blackhole)",
+          "status": "Not Supported"
+        },
+        {
+          "hardware": "Loudbox (Wormhole)",
+          "status": "Not Supported"
+        },
+        {
+          "hardware": "p100 (Blackhole)",
+          "status": "Not Supported"
+        }
+      ]
+    },
+    {
+      "id": "mochi-1-preview",
+      "display_name": "Mochi 1 Preview",
+      "family": "Mochi",
+      "tasks": [
+        "Text-to-Video",
+        "Video-Generation"
+      ],
+      "compatibility": [
+        {
+          "hardware": "Galaxy (Wormhole)",
+          "status": "Not Supported"
+        },
+        {
+          "hardware": "n150 (Wormhole)",
+          "status": "Not Supported"
+        },
+        {
+          "hardware": "n300 (Wormhole)",
+          "status": "Not Supported"
+        },
+        {
+          "hardware": "Quietbox (Blackhole)",
+          "status": "Not Supported"
+        },
+        {
+          "hardware": "2 x Quietbox (Blackhole)",
+          "status": "Not Supported"
+        },
+        {
           "hardware": "Loudbox (Wormhole)",
           "status": "Not Supported"
         },
@@ -490,6 +622,10 @@
           "status": "Not Supported"
         },
         {
+          "hardware": "2 x Quietbox (Blackhole)",
+          "status": "Not Supported"
+        },
+        {
           "hardware": "Loudbox (Wormhole)",
           "status": "Not Supported"
         },
@@ -522,6 +658,10 @@
         },
         {
           "hardware": "Quietbox (Blackhole)",
+          "status": "Not Supported"
+        },
+        {
+          "hardware": "2 x Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
@@ -561,6 +701,10 @@
           "status": "Not Supported"
         },
         {
+          "hardware": "2 x Quietbox (Blackhole)",
+          "status": "Not Supported"
+        },
+        {
           "hardware": "Loudbox (Wormhole)",
           "status": "Not Supported"
         },
@@ -594,6 +738,10 @@
         },
         {
           "hardware": "Quietbox (Blackhole)",
+          "status": "Not Supported"
+        },
+        {
+          "hardware": "2 x Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
@@ -633,6 +781,10 @@
           "status": "Not Supported"
         },
         {
+          "hardware": "2 x Quietbox (Blackhole)",
+          "status": "Not Supported"
+        },
+        {
           "hardware": "Loudbox (Wormhole)",
           "status": "Not Supported"
         },
@@ -669,6 +821,10 @@
           "status": "Not Supported"
         },
         {
+          "hardware": "2 x Quietbox (Blackhole)",
+          "status": "Not Supported"
+        },
+        {
           "hardware": "Loudbox (Wormhole)",
           "status": "Not Supported"
         },
@@ -701,6 +857,10 @@
         },
         {
           "hardware": "Quietbox (Blackhole)",
+          "status": "Not Supported"
+        },
+        {
+          "hardware": "2 x Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
@@ -745,6 +905,10 @@
           "status": "Not Supported"
         },
         {
+          "hardware": "2 x Quietbox (Blackhole)",
+          "status": "Not Supported"
+        },
+        {
           "hardware": "Loudbox (Wormhole)",
           "status": "Supported",
           "metrics": {
@@ -786,6 +950,10 @@
           "status": "Not Supported"
         },
         {
+          "hardware": "2 x Quietbox (Blackhole)",
+          "status": "Not Supported"
+        },
+        {
           "hardware": "Loudbox (Wormhole)",
           "status": "Not Supported"
         },
@@ -818,6 +986,10 @@
         },
         {
           "hardware": "Quietbox (Blackhole)",
+          "status": "Not Supported"
+        },
+        {
+          "hardware": "2 x Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
@@ -866,6 +1038,10 @@
           "status": "Not Supported"
         },
         {
+          "hardware": "2 x Quietbox (Blackhole)",
+          "status": "Not Supported"
+        },
+        {
           "hardware": "Loudbox (Wormhole)",
           "status": "Not Supported"
         },
@@ -902,6 +1078,10 @@
         },
         {
           "hardware": "Quietbox (Blackhole)",
+          "status": "Not Supported"
+        },
+        {
+          "hardware": "2 x Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
@@ -942,6 +1122,10 @@
         },
         {
           "hardware": "Quietbox (Blackhole)",
+          "status": "Not Supported"
+        },
+        {
+          "hardware": "2 x Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
@@ -995,6 +1179,10 @@
           "status": "Not Supported"
         },
         {
+          "hardware": "2 x Quietbox (Blackhole)",
+          "status": "Not Supported"
+        },
+        {
           "hardware": "Loudbox (Wormhole)",
           "status": "Not Supported"
         },
@@ -1030,6 +1218,10 @@
         },
         {
           "hardware": "Quietbox (Blackhole)",
+          "status": "Not Supported"
+        },
+        {
+          "hardware": "2 x Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
@@ -1072,6 +1264,10 @@
           "status": "Not Supported"
         },
         {
+          "hardware": "2 x Quietbox (Blackhole)",
+          "status": "Not Supported"
+        },
+        {
           "hardware": "Loudbox (Wormhole)",
           "status": "Not Supported"
         },
@@ -1108,6 +1304,49 @@
         },
         {
           "hardware": "Quietbox (Blackhole)",
+          "status": "Not Supported"
+        },
+        {
+          "hardware": "2 x Quietbox (Blackhole)",
+          "status": "Not Supported"
+        },
+        {
+          "hardware": "Loudbox (Wormhole)",
+          "status": "Not Supported"
+        },
+        {
+          "hardware": "p100 (Blackhole)",
+          "status": "Not Supported"
+        }
+      ]
+    },
+    {
+      "id": "wan2-2-t2v-a14b-diffusers",
+      "display_name": "Wan 2.2 T2V A14B",
+      "family": "Wan",
+      "tasks": [
+        "Text-to-Video",
+        "Video-Generation"
+      ],
+      "compatibility": [
+        {
+          "hardware": "Galaxy (Wormhole)",
+          "status": "Not Supported"
+        },
+        {
+          "hardware": "n150 (Wormhole)",
+          "status": "Not Supported"
+        },
+        {
+          "hardware": "n300 (Wormhole)",
+          "status": "Not Supported"
+        },
+        {
+          "hardware": "Quietbox (Blackhole)",
+          "status": "Not Supported"
+        },
+        {
+          "hardware": "2 x Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
@@ -1151,6 +1390,10 @@
         },
         {
           "hardware": "Quietbox (Blackhole)",
+          "status": "Not Supported"
+        },
+        {
+          "hardware": "2 x Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {

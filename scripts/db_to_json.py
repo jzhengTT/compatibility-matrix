@@ -28,11 +28,16 @@ from db_config import execute_query
 def load_data_from_database() -> pd.DataFrame:
     """Fetch compatibility data from database and return as DataFrame."""
     print("Fetching data from database...")
-    results = execute_query('fetch_compatibility_data.sql')
+    try:
+        results = execute_query('fetch_compatibility_data.sql')
+    except Exception as e:
+        print(f"Error: Failed to connect to database or execute query: {e}")
+        return pd.DataFrame()
+
     df = pd.DataFrame(results)
 
     if df.empty:
-        print("Warning: No data returned from database")
+        print("Error: No data returned from database")
         return df
 
     print(f"Loaded {len(df)} rows from database")
@@ -44,9 +49,6 @@ def discover_new_entries(df: pd.DataFrame) -> Tuple[Set[str], Set[str]]:
     Find models and devices in the database that are not in config mappings.
     Returns (new_models, new_devices).
     """
-    if df.empty:
-        return set(), set()
-
     db_models = set(df['ml_model_name'].unique())
     db_devices = set(df['device_name'].unique())
 
@@ -56,39 +58,25 @@ def discover_new_entries(df: pd.DataFrame) -> Tuple[Set[str], Set[str]]:
     return new_models, new_devices
 
 
-def warn_about_new_entries(new_models: Set[str], new_devices: Set[str]) -> None:
+def handle_new_entries(new_models: Set[str], new_devices: Set[str]) -> None:
     """
-    Display warnings about new models and devices, and save them to a file.
+    Save new models and devices to a file for manual review.
     New entries will NOT be included in the output until added to config.py.
     """
-    if new_models:
-        print(f"\n{'!'*80}")
-        print(f"WARNING: Found {len(new_models)} new model(s) in database:")
-        print(f"{'!'*80}")
-        for model in sorted(new_models):
-            print(f"  - {model}")
-        print("\nThese models will be EXCLUDED from output until added to config.py.")
-
-    if new_devices:
-        print(f"\n{'!'*80}")
-        print(f"WARNING: Found {len(new_devices)} new device(s) in database:")
-        print(f"{'!'*80}")
-        for device in sorted(new_devices):
-            print(f"  - {device}")
-        print("\nThese devices will be EXCLUDED from output until added to config.py.")
-
     if new_devices or new_models:
         save_new_entries_to_file(new_models=new_models, new_devices=new_devices)
 
-
 def build_compatibility_entry(
-    df: pd.DataFrame, model_name: str, device_name: str, hardware_name: str
+    df: pd.DataFrame,
+    model_name: str,
+    device_name: str,
+    hardware_name: str
 ) -> Tuple[Dict, bool]:
     """
     Build a compatibility entry for a model-device pair.
     Returns (entry_dict, is_supported).
     """
-    metrics = get_performance_metrics(df, model_name, device_name) if not df.empty else {}
+    metrics = get_performance_metrics(df, model_name, device_name)
     is_supported = bool(metrics)
 
     entry = {
@@ -109,15 +97,16 @@ def convert_database_to_json(output_path: str) -> None:
     df = load_data_from_database()
 
     if df.empty:
-        print("Warning: No data from database. Generating compatibility matrix for all MODEL_MAPPING entries with 'Not Supported' status.")
+        print("Stopping: Cannot proceed without data from database.")
+        return
 
-    # Check for new entries and warn user
+    # Check for new entries and save them to file
     new_models, new_devices = discover_new_entries(df)
     if new_models or new_devices:
-        warn_about_new_entries(new_models, new_devices)
+        handle_new_entries(new_models, new_devices)
 
     # Only process configured entries
-    configured_models = set(MODEL_MAPPING.keys())
+    configured_models = MODEL_MAPPING.keys()
     configured_devices = DEVICE_MAPPING
 
     models_dict: Dict[str, Dict] = {}
@@ -158,8 +147,9 @@ def convert_database_to_json(output_path: str) -> None:
         total_not_supported,
         len(models_list),
         output_path,
+        new_models=new_models,
+        new_devices=new_devices,
     )
-
 
 if __name__ == '__main__':
     script_dir = os.path.dirname(os.path.abspath(__file__))

@@ -16,13 +16,12 @@ from config import DEVICE_MAPPING, MODEL_MAPPING
 
 def create_model_id(model_name: str) -> str:
     """Create a kebab-case ID from model name."""
-    return model_name.lower().replace('.', '-').replace('_', '-').replace(' ', '-')
+    return re.sub(r'[.\s_]+', '-', model_name.lower())
 
 
 def get_model_config(model_name: str) -> Dict:
     """Get model configuration, with fallback for unknown models."""
-    config = MODEL_MAPPING.get(model_name)
-    if config:
+    if config := MODEL_MAPPING.get(model_name):
         return {
             'display_name': config['display_name'],
             'family': config['family'],
@@ -56,13 +55,38 @@ def print_summary(
     total_not_supported: int,
     model_count: int,
     output_path: str,
+    new_models: Set[str] = None,
+    new_devices: Set[str] = None,
 ) -> None:
-    """Print conversion summary with unique names."""
-    print(f"Successfully converted {model_count} models to JSON format")
+    """Print conversion summary with unique names and warnings about new entries."""
+    _print_new_entry_warnings(new_models, new_devices)
+    _print_conversion_stats(model_count, total_supported, total_not_supported, output_path)
+    _print_unique_names(unique_model_names, unique_device_names)
+
+
+def _print_new_entry_warnings(new_models: Set[str], new_devices: Set[str]) -> None:
+    """Print warnings about new models and devices."""
+    for entries, label in [(new_models, 'model(s)'), (new_devices, 'device(s)')]:
+        if entries:
+            print(f"\n{'!'*80}")
+            print(f"WARNING: Found {len(entries)} new {label} in database:")
+            print(f"{'!'*80}")
+            for entry in sorted(entries):
+                print(f"  - {entry}")
+            print(f"\nThese {label.rstrip('(s)')}s will be EXCLUDED from output until added to config.py.")
+
+
+def _print_conversion_stats(model_count: int, total_supported: int,
+                            total_not_supported: int, output_path: str) -> None:
+    """Print conversion statistics."""
+    print(f"\nSuccessfully converted {model_count} models to JSON format")
     print(f"  - {total_supported} Supported combinations")
     print(f"  - {total_not_supported} Not Supported combinations")
     print(f"Output written to {output_path}")
 
+
+def _print_unique_names(unique_model_names: Set[str], unique_device_names: Set[str]) -> None:
+    """Print unique model and device names."""
     separator = "=" * 60
 
     print(f"\n{separator}")
@@ -76,18 +100,14 @@ def print_summary(
     print(separator)
     for device in sorted(unique_device_names):
         mapped_name = DEVICE_MAPPING.get(device, device)
-        if mapped_name != device:
-            print(f"  - {device} -> {mapped_name}")
-        else:
-            print(f"  - {device}")
+        display = f"{device} -> {mapped_name}" if mapped_name != device else device
+        print(f"  - {display}")
 
 
 def get_performance_metrics(df: pd.DataFrame, model_name: str, device_name: str) -> Dict:
     """Extract performance metrics for a model-device pair."""
-    # Define the metrics we want to include
     target_metrics = ['mean_ttft_ms', 'ttft', 'mean_tps', 'accuracy_check']
 
-    # Filter data for this specific model-device combination
     pair_data = df[
         (df['ml_model_name'] == model_name) &
         (df['device_name'] == device_name) &
@@ -97,16 +117,9 @@ def get_performance_metrics(df: pd.DataFrame, model_name: str, device_name: str)
 
     metrics = {}
     for _, row in pair_data.iterrows():
-        metric_name = row['metric_name']
-        metric_value = row['metric_value']
-
-        # Convert metric value to appropriate type
-        if metric_name == 'accuracy_check':
-            # Treat non-zero values as True, zero/null as False
-            metrics[metric_name] = bool(metric_value != 0)
-        else:
-            # Keep numeric metrics as numbers
-            metrics[metric_name] = float(metric_value)
+        metric_name, metric_value = row['metric_name'], row['metric_value']
+        metrics[metric_name] = (bool(metric_value != 0) if metric_name == 'accuracy_check'
+                               else float(metric_value))
 
     return metrics
 
@@ -122,45 +135,65 @@ def save_new_entries_to_file(new_models: Set[str], new_devices: Set[str]) -> Non
     script_dir = os.path.dirname(os.path.abspath(__file__))
     output_file = os.path.join(script_dir, 'new_entries.txt')
 
+    sections = []
+    sections.append(_create_header())
+
+    if new_devices:
+        sections.append(_create_device_section(new_devices))
+
+    if new_models:
+        sections.append(_create_model_section(new_models))
+
+    sections.append(_create_instructions())
+
     with open(output_file, 'w') as f:
-        f.write("=" * 80 + "\n")
-        f.write("NEW MODELS AND DEVICES DETECTED\n")
-        f.write("=" * 80 + "\n")
-        f.write(f"Generated at: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')}\n")
-        f.write("\nThese entries need to be added to config.py manually.\n")
-        f.write("=" * 80 + "\n\n")
-
-        if new_devices:
-            f.write(f"NEW DEVICES ({len(new_devices)}):\n")
-            f.write("-" * 80 + "\n")
-            f.write("Add these entries to the DEVICE_MAPPING dictionary in config.py:\n\n")
-            for device in sorted(new_devices):
-                display_name = device.capitalize()
-                f.write(f"    '{device}': '{display_name}',\n")
-            f.write("\n")
-
-        if new_models:
-            f.write(f"NEW MODELS ({len(new_models)}):\n")
-            f.write("-" * 80 + "\n")
-            f.write("Add these entries to the MODEL_MAPPING dictionary in config.py:\n\n")
-            for model in sorted(new_models):
-                f.write(f"    '{model}': {{\n")
-                f.write(f"        'display_name': '{model}',\n")
-                f.write(f"        'family': 'Other',  # TODO: Update with correct family\n")
-                f.write(f"        'tasks': ['Unknown']  # TODO: Update with correct tasks\n")
-                f.write(f"    }},\n\n")
-
-        f.write("=" * 80 + "\n")
-        f.write("INSTRUCTIONS:\n")
-        f.write("=" * 80 + "\n")
-        f.write("1. Review the entries above\n")
-        f.write("2. Update display names, families, and tasks as needed\n")
-        f.write("3. Copy the entries to the appropriate section in config.py\n")
-        f.write("4. Delete or archive this file once you've updated config.py\n")
+        f.write('\n'.join(sections))
 
     print(f"\n{'='*80}")
     print(f"WARNING: New entries detected and saved to: {output_file}")
     print(f"{'='*80}")
+
+
+def _create_header() -> str:
+    """Create the file header section."""
+    sep = "=" * 80
+    timestamp = datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')
+    return f"{sep}\nNEW MODELS AND DEVICES DETECTED\n{sep}\nGenerated at: {timestamp}\n\nThese entries need to be added to config.py manually.\n{sep}\n"
+
+
+def _create_device_section(new_devices: Set[str]) -> str:
+    """Create the device section for the file."""
+    lines = [
+        f"NEW DEVICES ({len(new_devices)}):",
+        "-" * 80,
+        "Add these entries to the DEVICE_MAPPING dictionary in config.py:\n"
+    ]
+    lines.extend(f"    '{device}': '{device.capitalize()}'," for device in sorted(new_devices))
+    return '\n'.join(lines) + '\n'
+
+
+def _create_model_section(new_models: Set[str]) -> str:
+    """Create the model section for the file."""
+    lines = [
+        f"NEW MODELS ({len(new_models)}):",
+        "-" * 80,
+        "Add these entries to the MODEL_MAPPING dictionary in config.py:\n"
+    ]
+    for model in sorted(new_models):
+        lines.extend([
+            f"    '{model}': {{",
+            f"        'display_name': '{model}',",
+            f"        'family': 'Other',  # TODO: Update with correct family",
+            f"        'tasks': ['Unknown']  # TODO: Update with correct tasks",
+            "    },\n"
+        ])
+    return '\n'.join(lines)
+
+
+def _create_instructions() -> str:
+    """Create the instructions section for the file."""
+    sep = "=" * 80
+    return f"{sep}\nINSTRUCTIONS:\n{sep}\n1. Review the entries above\n2. Update display names, families, and tasks as needed\n3. Copy the entries to the appropriate section in config.py\n4. Delete or archive this file once you've updated config.py\n"
 
 
 def update_config_file(new_devices: Set[str] = None, new_models: Set[str] = None) -> None:
