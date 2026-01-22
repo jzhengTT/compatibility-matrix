@@ -11,7 +11,8 @@
       "Bash(.venv/bin/pip install:*)",
       "Bash(if [ -d \".venv\" ])",
       "Bash(then source .venv/bin/activate)",
-      "Bash(else python3 -m venv .venv)"
+      "Bash(else python3 -m venv .venv)",
+      "Bash(test:*)"
     ]
   }
 }

@@ -3,7 +3,7 @@ Configuration for compatibility conversion script.
 
 This file contains all mappings for the conversion process.
 
-To add a new model, simply add one entry to MODELS_CONFIG with all its properties.
+To add a new model, simply add one entry to MODEL_MAPPING with all its properties.
 To add a new device, add an entry to DEVICE_MAPPING.
 
 After editing, run: python3 scripts/convert_compatibility.py
@@ -15,13 +15,14 @@ DEVICE_MAPPING = {
     'n150': 'n150 (Wormhole)',
     'n300': 'n300 (Wormhole)',
     'p150x4': 'Quietbox (Blackhole)',
+    'p150x8': '2 x Quietbox (Blackhole)',
     't3k': 'Loudbox (Wormhole)',
-    'p100': 'p100 (Blackhole)'
+    'p100': 'p100 (Blackhole)',
 }
 
 # Consolidated model configuration - all model info in one place
 # Each model has: display_name, family, and tasks
-MODELS_CONFIG = {
+MODEL_MAPPING = {
     # LLaMA models
     'Llama-3.1-8B-Instruct': {
         'display_name': 'LLaMA 3.1 8B Instruct',

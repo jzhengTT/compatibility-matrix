@@ -1,55 +1,54 @@
 import { useState, useEffect } from 'react'
 import ModelCard from './ModelCard'
-import modelsData from '../../docs/supported-models.json'
+import compatibilityData from '../../data/compatibility.json'
 
 const ModelGrid = ({ searchQuery, filters }) => {
   const [filteredModels, setFilteredModels] = useState([])
 
   useEffect(() => {
     // Apply filters and search
-    let filtered = modelsData.Models || []
+    let filtered = compatibilityData.models || []
 
     // Apply search query
     if (searchQuery.trim()) {
       const query = searchQuery.toLowerCase()
       filtered = filtered.filter(model =>
-        model.DisplayName.toLowerCase().includes(query) ||
-        model.Family.toLowerCase().includes(query) ||
-        model.Tasks.some(task => task.toLowerCase().includes(query)) ||
-        model.Description.toLowerCase().includes(query)
+        model.display_name.toLowerCase().includes(query) ||
+        model.family.toLowerCase().includes(query) ||
+        model.tasks.some(task => task.toLowerCase().includes(query))
       )
     }
 
     // Apply task filters
     if (filters.tasks.length > 0) {
       filtered = filtered.filter(model =>
-        model.Tasks.some(task => filters.tasks.includes(task))
+        model.tasks.some(task => filters.tasks.includes(task))
       )
     }
 
     // Apply model family filters
     if (filters.models.length > 0) {
       filtered = filtered.filter(model =>
-        filters.models.includes(model.Family)
+        filters.models.includes(model.family)
       )
     }
 
-    // Apply hardware filters
+    // Apply hardware filters - only show models that are SUPPORTED on the selected hardware
     if (filters.hardware.length > 0) {
       filtered = filtered.filter(model =>
-        model.Variants.some(variant =>
-          variant.CompatibilityList.some(comp =>
-            filters.hardware.includes(comp.SupportedHardware)
-          )
+        model.compatibility.some(comp =>
+          filters.hardware.includes(comp.hardware) && comp.status === 'Supported'
         )
       )
     }
 
-    // Apply status filters - Note: new schema doesn't have status field
-    // This filter will be inactive with the current supported-models.json structure
+    // Apply status filters
     if (filters.status.length > 0) {
-      // Since the new schema doesn't have status, we'll keep all models
-      // This could be extended if status information is added to the new schema
+      filtered = filtered.filter(model =>
+        model.compatibility.some(comp =>
+          filters.status.includes(comp.status)
+        )
+      )
     }
 
     setFilteredModels(filtered)

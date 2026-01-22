@@ -10,7 +10,8 @@ WITH recent_pipelines AS (
       name = 'On nightly'
       AND project = 'tt-shield'
       AND git_branch_name = 'main'
-      AND pipeline_end_ts >= NOW() - INTERVAL '2 days'
+    ORDER BY pipeline_end_ts DESC
+    LIMIT 1
 ),
 filtered_jobs AS (
     SELECT *

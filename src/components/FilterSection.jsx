@@ -41,6 +41,7 @@ const FilterSection = ({
   const getStatusColor = (status) => {
     const colors = {
       'Supported': 'bg-green-500',
+      'Not Supported': 'bg-gray-400',
       'Coming Soon': 'bg-blue-500',
       'Deprecated': 'bg-gray-400'
     }
@@ -55,10 +56,10 @@ const FilterSection = ({
           <button
             key={option}
             onClick={() => onFilterChange(option, !isSelected)}
-            className={`px-3 py-1.5 text-xs font-medium rounded-full transition-colors ${
+            className={`px-3 py-1.5 text-xs font-medium rounded-full transition-colors cursor-pointer ${
               isSelected
                 ? 'bg-blue-100 text-blue-800 border border-blue-200'
-                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                : 'bg-gray-100 text-gray-700 border border-transparent hover:bg-gray-200 hover:border-gray-300'
             }`}
           >
             {option}
@@ -76,10 +77,10 @@ const FilterSection = ({
           <button
             key={option}
             onClick={() => onFilterChange(option, !isSelected)}
-            className={`flex items-center gap-2 px-3 py-1.5 text-xs font-medium rounded-full transition-colors ${
+            className={`flex items-center gap-2 px-3 py-1.5 text-xs font-medium rounded-full transition-colors cursor-pointer ${
               isSelected
                 ? 'bg-blue-100 text-blue-800 border border-blue-200'
-                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                : 'bg-gray-100 text-gray-700 border border-transparent hover:bg-gray-200 hover:border-gray-300'
             }`}
           >
             <GlobeIcon className="w-3 h-3" />
@@ -122,13 +123,15 @@ const FilterSection = ({
           <button
             key={optionValue}
             onClick={() => onFilterChange(optionValue, !isSelected)}
-            className={`w-full flex items-center justify-between text-sm cursor-pointer hover:bg-gray-50 px-2 py-2 rounded ${
-              isSelected ? 'bg-blue-50 text-blue-900' : 'text-gray-700'
+            className={`w-full flex items-center justify-between text-sm cursor-pointer px-2 py-2 rounded border transition-colors ${
+              isSelected
+                ? 'bg-blue-100 text-blue-800 border-blue-200 font-medium'
+                : 'text-gray-700 border-transparent hover:bg-gray-50'
             }`}
           >
             <div className="flex items-center space-x-2">
               <span>📱</span>
-              <span className={`${isSelected ? 'font-medium' : ''}`}>{label}</span>
+              <span>{label}</span>
             </div>
             {badge && (
               <span className={`text-xs px-2 py-0.5 rounded ${color}`}>
@@ -184,8 +187,8 @@ const FilterSection = ({
   const renderContent = () => {
     switch (displayType) {
       case 'pills':
-        // Check if this is the Models section to render with globe icons
-        if (name === 'Models') {
+        // Check if this is the Model Family section to render with globe icons
+        if (name === 'Model Family' || name === 'Models') {
           return renderModelPills()
         }
         return renderTaskButtons()

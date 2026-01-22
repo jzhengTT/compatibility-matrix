@@ -18,35 +18,33 @@ const Sidebar = ({ searchQuery, onSearchChange, filters, onFilterChange }) => {
       name: 'Task',
       key: 'tasks',
       displayType: 'pills',
-      options: ['text-generation', 'image-generation', 'speech-recognition']
+      options: ['LLM', 'Vision', 'Text-Generation', 'Image-Classification', 'Text-to-Image', 'Image-Generation', 'Image-Segmentation']
     },
     {
-      name: 'Models',
+      name: 'Model Family',
       key: 'models',
       displayType: 'pills',
-      options: ['Qwen', 'Gemma', 'Llama', 'Stable Diffusion', 'Whisper']
+      options: ['LLaMA', 'Qwen', 'Gemma', 'Mistral', 'ResNet', 'EfficientNet', 'MobileNet', 'ViT', 'VoVNet', 'SegFormer', 'UNet']
     },
     {
-      name: 'Supported Hardware',
+      name: 'Hardware',
       key: 'hardware',
       displayType: 'hardware',
       options: [
-        { value: 'galaxy', label: 'Galaxy (Blackhole)' }
+        'Galaxy (Wormhole)',
+        'n150 (Wormhole)',
+        'n300 (Wormhole)',
+        'Quietbox (Blackhole)',
+        'Loudbox (Wormhole)',
+        'p100 (Blackhole)'
       ]
     },
-    // Note: Commented out software and status filters as new schema doesn't have this data
-    // {
-    //   name: 'Supported Software',
-    //   key: 'software',
-    //   displayType: 'software',
-    //   options: ['TT-Forge', 'TT-NN', 'TT-Metallium', 'TT-LLK']
-    // },
-    // {
-    //   name: 'Status',
-    //   key: 'status',
-    //   displayType: 'status',
-    //   options: ['Supported', 'Coming Soon', 'Deprecated']
-    // }
+    {
+      name: 'Status',
+      key: 'status',
+      displayType: 'status',
+      options: ['Supported', 'Not Supported']
+    }
   ]
 
   return (
