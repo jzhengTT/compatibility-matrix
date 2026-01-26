@@ -80,6 +80,7 @@ def build_compatibility_entry(
     is_supported = bool(metrics)
 
     entry = {
+        'hardware_id': device_name,
         'hardware': hardware_name,
         'status': 'Supported' if is_supported else 'Not Supported',
     }

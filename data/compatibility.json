@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-01-22T22:18:21Z",
+    "generated_at": "2026-01-26T21:06:58Z",
     "source": "database",
     "schema_version": "1.0"
   },
@@ -15,30 +15,37 @@
       ],
       "compatibility": [
         {
+          "hardware_id": "galaxy",
           "hardware": "Galaxy (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "n150",
           "hardware": "n150 (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "n300",
           "hardware": "n300 (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p150x4",
           "hardware": "Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p150x8",
           "hardware": "2 x Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "t3k",
           "hardware": "Loudbox (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p100",
           "hardware": "p100 (Blackhole)",
           "status": "Not Supported"
         }
@@ -54,34 +61,41 @@
       ],
       "compatibility": [
         {
+          "hardware_id": "galaxy",
           "hardware": "Galaxy (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "n150",
           "hardware": "n150 (Wormhole)",
           "status": "Supported",
           "metrics": {
-            "mean_ttft_ms": 1957.5,
+            "mean_ttft_ms": 972.1,
             "ttft": 0.05
           }
         },
         {
+          "hardware_id": "n300",
           "hardware": "n300 (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p150x4",
           "hardware": "Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p150x8",
           "hardware": "2 x Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "t3k",
           "hardware": "Loudbox (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p100",
           "hardware": "p100 (Blackhole)",
           "status": "Not Supported"
         }
@@ -97,30 +111,37 @@
       ],
       "compatibility": [
         {
+          "hardware_id": "galaxy",
           "hardware": "Galaxy (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "n150",
           "hardware": "n150 (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "n300",
           "hardware": "n300 (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p150x4",
           "hardware": "Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p150x8",
           "hardware": "2 x Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "t3k",
           "hardware": "Loudbox (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p100",
           "hardware": "p100 (Blackhole)",
           "status": "Not Supported"
         }
@@ -136,30 +157,42 @@
       ],
       "compatibility": [
         {
+          "hardware_id": "galaxy",
           "hardware": "Galaxy (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "n150",
           "hardware": "n150 (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "n300",
           "hardware": "n300 (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p150x4",
           "hardware": "Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p150x8",
           "hardware": "2 x Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "t3k",
           "hardware": "Loudbox (Wormhole)",
-          "status": "Not Supported"
+          "status": "Supported",
+          "metrics": {
+            "mean_ttft_ms": 2120.1,
+            "mean_tps": 11.11,
+            "accuracy_check": true
+          }
         },
         {
+          "hardware_id": "p100",
           "hardware": "p100 (Blackhole)",
           "status": "Not Supported"
         }
@@ -175,30 +208,37 @@
       ],
       "compatibility": [
         {
+          "hardware_id": "galaxy",
           "hardware": "Galaxy (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "n150",
           "hardware": "n150 (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "n300",
           "hardware": "n300 (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p150x4",
           "hardware": "Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p150x8",
           "hardware": "2 x Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "t3k",
           "hardware": "Loudbox (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p100",
           "hardware": "p100 (Blackhole)",
           "status": "Not Supported"
         }
@@ -214,50 +254,57 @@
       ],
       "compatibility": [
         {
+          "hardware_id": "galaxy",
           "hardware": "Galaxy (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "n150",
           "hardware": "n150 (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "n300",
           "hardware": "n300 (Wormhole)",
           "status": "Supported",
           "metrics": {
-            "mean_ttft_ms": 459.3,
-            "mean_tps": 30.28,
+            "mean_tps": 8.46,
+            "mean_ttft_ms": 51880.8,
             "ttft": 58.0,
             "accuracy_check": true
           }
         },
         {
+          "hardware_id": "p150x4",
           "hardware": "Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p150x8",
           "hardware": "2 x Quietbox (Blackhole)",
-          "status": "Supported",
-          "metrics": {
-            "mean_ttft_ms": 9754.7,
-            "mean_tps": 16.67,
-            "ttft": 30.0,
-            "accuracy_check": true
-          }
+          "status": "Not Supported"
         },
         {
+          "hardware_id": "t3k",
           "hardware": "Loudbox (Wormhole)",
           "status": "Supported",
           "metrics": {
-            "mean_tps": 49.69,
-            "mean_ttft_ms": 47.6,
+            "mean_ttft_ms": 14109.0,
+            "mean_tps": 37.92,
             "ttft": 1088.0,
             "accuracy_check": true
           }
         },
         {
+          "hardware_id": "p100",
           "hardware": "p100 (Blackhole)",
-          "status": "Not Supported"
+          "status": "Supported",
+          "metrics": {
+            "mean_ttft_ms": 4444.5,
+            "mean_tps": 13.03,
+            "ttft": 57.0,
+            "accuracy_check": true
+          }
         }
       ]
     },
@@ -272,30 +319,37 @@
       ],
       "compatibility": [
         {
+          "hardware_id": "galaxy",
           "hardware": "Galaxy (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "n150",
           "hardware": "n150 (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "n300",
           "hardware": "n300 (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p150x4",
           "hardware": "Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p150x8",
           "hardware": "2 x Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "t3k",
           "hardware": "Loudbox (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p100",
           "hardware": "p100 (Blackhole)",
           "status": "Not Supported"
         }
@@ -311,42 +365,55 @@
       ],
       "compatibility": [
         {
+          "hardware_id": "galaxy",
           "hardware": "Galaxy (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "n150",
           "hardware": "n150 (Wormhole)",
           "status": "Supported",
           "metrics": {
-            "mean_tps": 57.46,
-            "mean_ttft_ms": 33.6,
+            "mean_ttft_ms": 8959.3,
+            "mean_tps": 23.62,
             "ttft": 6.0,
             "accuracy_check": true
           }
         },
         {
+          "hardware_id": "n300",
           "hardware": "n300 (Wormhole)",
-          "status": "Not Supported"
+          "status": "Supported",
+          "metrics": {
+            "mean_tps": 58.95,
+            "mean_ttft_ms": 40.2,
+            "ttft": 6.0,
+            "accuracy_check": true
+          }
         },
         {
+          "hardware_id": "p150x4",
           "hardware": "Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p150x8",
           "hardware": "2 x Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "t3k",
           "hardware": "Loudbox (Wormhole)",
           "status": "Supported",
           "metrics": {
-            "mean_ttft_ms": 1252.1,
-            "mean_tps": 44.85,
+            "mean_ttft_ms": 1274.0,
+            "mean_tps": 44.89,
             "ttft": 6.0,
             "accuracy_check": true
           }
         },
         {
+          "hardware_id": "p100",
           "hardware": "p100 (Blackhole)",
           "status": "Not Supported"
         }
@@ -362,36 +429,43 @@
       ],
       "compatibility": [
         {
+          "hardware_id": "galaxy",
           "hardware": "Galaxy (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "n150",
           "hardware": "n150 (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "n300",
           "hardware": "n300 (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p150x4",
           "hardware": "Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p150x8",
           "hardware": "2 x Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "t3k",
           "hardware": "Loudbox (Wormhole)",
           "status": "Supported",
           "metrics": {
-            "mean_tps": 50.24,
-            "mean_ttft_ms": 38.1,
+            "mean_tps": 47.74,
+            "mean_ttft_ms": 9908.8,
             "ttft": 17.0,
             "accuracy_check": true
           }
         },
         {
+          "hardware_id": "p100",
           "hardware": "p100 (Blackhole)",
           "status": "Not Supported"
         }
@@ -408,30 +482,37 @@
       ],
       "compatibility": [
         {
+          "hardware_id": "galaxy",
           "hardware": "Galaxy (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "n150",
           "hardware": "n150 (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "n300",
           "hardware": "n300 (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p150x4",
           "hardware": "Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p150x8",
           "hardware": "2 x Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "t3k",
           "hardware": "Loudbox (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p100",
           "hardware": "p100 (Blackhole)",
           "status": "Not Supported"
         }
@@ -447,30 +528,43 @@
       ],
       "compatibility": [
         {
+          "hardware_id": "galaxy",
           "hardware": "Galaxy (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "n150",
           "hardware": "n150 (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "n300",
           "hardware": "n300 (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p150x4",
           "hardware": "Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p150x8",
           "hardware": "2 x Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "t3k",
           "hardware": "Loudbox (Wormhole)",
-          "status": "Not Supported"
+          "status": "Supported",
+          "metrics": {
+            "mean_ttft_ms": 25067.1,
+            "mean_tps": 8.35,
+            "ttft": 38.0,
+            "accuracy_check": true
+          }
         },
         {
+          "hardware_id": "p100",
           "hardware": "p100 (Blackhole)",
           "status": "Not Supported"
         }
@@ -486,30 +580,37 @@
       ],
       "compatibility": [
         {
+          "hardware_id": "galaxy",
           "hardware": "Galaxy (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "n150",
           "hardware": "n150 (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "n300",
           "hardware": "n300 (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p150x4",
           "hardware": "Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p150x8",
           "hardware": "2 x Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "t3k",
           "hardware": "Loudbox (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p100",
           "hardware": "p100 (Blackhole)",
           "status": "Not Supported"
         }
@@ -525,33 +626,41 @@
       ],
       "compatibility": [
         {
+          "hardware_id": "galaxy",
           "hardware": "Galaxy (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "n150",
           "hardware": "n150 (Wormhole)",
           "status": "Supported",
           "metrics": {
+            "mean_ttft_ms": 236.2,
             "ttft": 0.6
           }
         },
         {
+          "hardware_id": "n300",
           "hardware": "n300 (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p150x4",
           "hardware": "Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p150x8",
           "hardware": "2 x Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "t3k",
           "hardware": "Loudbox (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p100",
           "hardware": "p100 (Blackhole)",
           "status": "Not Supported"
         }
@@ -567,30 +676,37 @@
       ],
       "compatibility": [
         {
+          "hardware_id": "galaxy",
           "hardware": "Galaxy (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "n150",
           "hardware": "n150 (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "n300",
           "hardware": "n300 (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p150x4",
           "hardware": "Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p150x8",
           "hardware": "2 x Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "t3k",
           "hardware": "Loudbox (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p100",
           "hardware": "p100 (Blackhole)",
           "status": "Not Supported"
         }
@@ -606,30 +722,37 @@
       ],
       "compatibility": [
         {
+          "hardware_id": "galaxy",
           "hardware": "Galaxy (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "n150",
           "hardware": "n150 (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "n300",
           "hardware": "n300 (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p150x4",
           "hardware": "Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p150x8",
           "hardware": "2 x Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "t3k",
           "hardware": "Loudbox (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p100",
           "hardware": "p100 (Blackhole)",
           "status": "Not Supported"
         }
@@ -645,30 +768,37 @@
       ],
       "compatibility": [
         {
+          "hardware_id": "galaxy",
           "hardware": "Galaxy (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "n150",
           "hardware": "n150 (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "n300",
           "hardware": "n300 (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p150x4",
           "hardware": "Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p150x8",
           "hardware": "2 x Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "t3k",
           "hardware": "Loudbox (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p100",
           "hardware": "p100 (Blackhole)",
           "status": "Not Supported"
         }
@@ -685,30 +815,42 @@
       ],
       "compatibility": [
         {
+          "hardware_id": "galaxy",
           "hardware": "Galaxy (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "n150",
           "hardware": "n150 (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "n300",
           "hardware": "n300 (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p150x4",
           "hardware": "Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p150x8",
           "hardware": "2 x Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "t3k",
           "hardware": "Loudbox (Wormhole)",
-          "status": "Not Supported"
+          "status": "Supported",
+          "metrics": {
+            "mean_ttft_ms": 178.6,
+            "mean_tps": 11.34,
+            "accuracy_check": true
+          }
         },
         {
+          "hardware_id": "p100",
           "hardware": "p100 (Blackhole)",
           "status": "Not Supported"
         }
@@ -725,30 +867,37 @@
       ],
       "compatibility": [
         {
+          "hardware_id": "galaxy",
           "hardware": "Galaxy (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "n150",
           "hardware": "n150 (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "n300",
           "hardware": "n300 (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p150x4",
           "hardware": "Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p150x8",
           "hardware": "2 x Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "t3k",
           "hardware": "Loudbox (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p100",
           "hardware": "p100 (Blackhole)",
           "status": "Not Supported"
         }
@@ -765,30 +914,42 @@
       ],
       "compatibility": [
         {
+          "hardware_id": "galaxy",
           "hardware": "Galaxy (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "n150",
           "hardware": "n150 (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "n300",
           "hardware": "n300 (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p150x4",
           "hardware": "Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p150x8",
           "hardware": "2 x Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "t3k",
           "hardware": "Loudbox (Wormhole)",
-          "status": "Not Supported"
+          "status": "Supported",
+          "metrics": {
+            "mean_tps": 6.33,
+            "mean_ttft_ms": 102464.6,
+            "accuracy_check": true
+          }
         },
         {
+          "hardware_id": "p100",
           "hardware": "p100 (Blackhole)",
           "status": "Not Supported"
         }
@@ -805,30 +966,37 @@
       ],
       "compatibility": [
         {
+          "hardware_id": "galaxy",
           "hardware": "Galaxy (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "n150",
           "hardware": "n150 (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "n300",
           "hardware": "n300 (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p150x4",
           "hardware": "Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p150x8",
           "hardware": "2 x Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "t3k",
           "hardware": "Loudbox (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p100",
           "hardware": "p100 (Blackhole)",
           "status": "Not Supported"
         }
@@ -844,36 +1012,42 @@
       ],
       "compatibility": [
         {
+          "hardware_id": "galaxy",
           "hardware": "Galaxy (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "n150",
           "hardware": "n150 (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "n300",
           "hardware": "n300 (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p150x4",
           "hardware": "Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p150x8",
           "hardware": "2 x Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "t3k",
           "hardware": "Loudbox (Wormhole)",
           "status": "Supported",
           "metrics": {
-            "mean_tps": 20.8,
-            "mean_ttft_ms": 369.0,
-            "ttft": 62.0,
-            "accuracy_check": true
+            "mean_tps": 14.61,
+            "mean_ttft_ms": 6608.7,
+            "ttft": 62.0
           }
         },
         {
+          "hardware_id": "p100",
           "hardware": "p100 (Blackhole)",
           "status": "Not Supported"
         }
@@ -889,36 +1063,52 @@
       ],
       "compatibility": [
         {
+          "hardware_id": "galaxy",
           "hardware": "Galaxy (Wormhole)",
-          "status": "Not Supported"
+          "status": "Supported",
+          "metrics": {
+            "mean_ttft_ms": 5136.1,
+            "mean_tps": 8.58,
+            "ttft": 22.0
+          }
         },
         {
+          "hardware_id": "n150",
           "hardware": "n150 (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "n300",
           "hardware": "n300 (Wormhole)",
-          "status": "Not Supported"
+          "status": "Supported",
+          "metrics": {
+            "mean_ttft_ms": 13519.0,
+            "mean_tps": 7.56,
+            "ttft": 42.0
+          }
         },
         {
+          "hardware_id": "p150x4",
           "hardware": "Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p150x8",
           "hardware": "2 x Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "t3k",
           "hardware": "Loudbox (Wormhole)",
           "status": "Supported",
           "metrics": {
-            "mean_tps": 42.61,
-            "mean_ttft_ms": 51.8,
-            "ttft": 22.0,
-            "accuracy_check": true
+            "mean_ttft_ms": 5120.3,
+            "mean_tps": 20.74,
+            "ttft": 22.0
           }
         },
         {
+          "hardware_id": "p100",
           "hardware": "p100 (Blackhole)",
           "status": "Not Supported"
         }
@@ -934,30 +1124,37 @@
       ],
       "compatibility": [
         {
+          "hardware_id": "galaxy",
           "hardware": "Galaxy (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "n150",
           "hardware": "n150 (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "n300",
           "hardware": "n300 (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p150x4",
           "hardware": "Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p150x8",
           "hardware": "2 x Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "t3k",
           "hardware": "Loudbox (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p100",
           "hardware": "p100 (Blackhole)",
           "status": "Not Supported"
         }
@@ -973,36 +1170,42 @@
       ],
       "compatibility": [
         {
+          "hardware_id": "galaxy",
           "hardware": "Galaxy (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "n150",
           "hardware": "n150 (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "n300",
           "hardware": "n300 (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p150x4",
           "hardware": "Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p150x8",
           "hardware": "2 x Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "t3k",
           "hardware": "Loudbox (Wormhole)",
           "status": "Supported",
           "metrics": {
-            "mean_ttft_ms": 14731.0,
-            "mean_tps": 11.3,
-            "ttft": 63.0,
-            "accuracy_check": true
+            "mean_ttft_ms": 6250.5,
+            "mean_tps": 14.79,
+            "ttft": 63.0
           }
         },
         {
+          "hardware_id": "p100",
           "hardware": "p100 (Blackhole)",
           "status": "Not Supported"
         }
@@ -1018,34 +1221,41 @@
       ],
       "compatibility": [
         {
+          "hardware_id": "galaxy",
           "hardware": "Galaxy (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "n150",
           "hardware": "n150 (Wormhole)",
           "status": "Supported",
           "metrics": {
-            "mean_ttft_ms": 306.0,
+            "mean_ttft_ms": 342.5,
             "ttft": 0.05
           }
         },
         {
+          "hardware_id": "n300",
           "hardware": "n300 (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p150x4",
           "hardware": "Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p150x8",
           "hardware": "2 x Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "t3k",
           "hardware": "Loudbox (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p100",
           "hardware": "p100 (Blackhole)",
           "status": "Not Supported"
         }
@@ -1061,34 +1271,41 @@
       ],
       "compatibility": [
         {
+          "hardware_id": "galaxy",
           "hardware": "Galaxy (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "n150",
           "hardware": "n150 (Wormhole)",
           "status": "Supported",
           "metrics": {
-            "mean_ttft_ms": 148.1,
+            "mean_ttft_ms": 152.1,
             "ttft": 0.05
           }
         },
         {
+          "hardware_id": "n300",
           "hardware": "n300 (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p150x4",
           "hardware": "Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p150x8",
           "hardware": "2 x Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "t3k",
           "hardware": "Loudbox (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p100",
           "hardware": "p100 (Blackhole)",
           "status": "Not Supported"
         }
@@ -1104,40 +1321,47 @@
       ],
       "compatibility": [
         {
+          "hardware_id": "galaxy",
           "hardware": "Galaxy (Wormhole)",
           "status": "Supported",
           "metrics": {
-            "mean_ttft_ms": 5104.0,
+            "mean_ttft_ms": 5130.4,
             "ttft": 5.0,
             "accuracy_check": true
           }
         },
         {
+          "hardware_id": "n150",
           "hardware": "n150 (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "n300",
           "hardware": "n300 (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p150x4",
           "hardware": "Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p150x8",
           "hardware": "2 x Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "t3k",
           "hardware": "Loudbox (Wormhole)",
           "status": "Supported",
           "metrics": {
-            "mean_ttft_ms": 11493.8,
+            "mean_ttft_ms": 11508.0,
             "ttft": 11.0,
             "accuracy_check": true
           }
         },
         {
+          "hardware_id": "p100",
           "hardware": "p100 (Blackhole)",
           "status": "Not Supported"
         }
@@ -1153,40 +1377,47 @@
       ],
       "compatibility": [
         {
+          "hardware_id": "galaxy",
           "hardware": "Galaxy (Wormhole)",
           "status": "Supported",
           "metrics": {
-            "mean_ttft_ms": 10087.9,
+            "mean_ttft_ms": 8721.0,
             "ttft": 12.5,
             "accuracy_check": true
           }
         },
         {
+          "hardware_id": "n150",
           "hardware": "n150 (Wormhole)",
           "status": "Supported",
           "metrics": {
-            "mean_ttft_ms": 8918.1,
+            "mean_ttft_ms": 8963.0,
             "ttft": 12.5,
             "accuracy_check": true
           }
         },
         {
+          "hardware_id": "n300",
           "hardware": "n300 (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p150x4",
           "hardware": "Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p150x8",
           "hardware": "2 x Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "t3k",
           "hardware": "Loudbox (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p100",
           "hardware": "p100 (Blackhole)",
           "status": "Not Supported"
         }
@@ -1202,10 +1433,12 @@
       ],
       "compatibility": [
         {
+          "hardware_id": "galaxy",
           "hardware": "Galaxy (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "n150",
           "hardware": "n150 (Wormhole)",
           "status": "Supported",
           "metrics": {
@@ -1213,22 +1446,27 @@
           }
         },
         {
+          "hardware_id": "n300",
           "hardware": "n300 (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p150x4",
           "hardware": "Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p150x8",
           "hardware": "2 x Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "t3k",
           "hardware": "Loudbox (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p100",
           "hardware": "p100 (Blackhole)",
           "status": "Not Supported"
         }
@@ -1244,34 +1482,41 @@
       ],
       "compatibility": [
         {
+          "hardware_id": "galaxy",
           "hardware": "Galaxy (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "n150",
           "hardware": "n150 (Wormhole)",
           "status": "Supported",
           "metrics": {
-            "mean_ttft_ms": 203.3,
+            "mean_ttft_ms": 223.4,
             "ttft": 0.05
           }
         },
         {
+          "hardware_id": "n300",
           "hardware": "n300 (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p150x4",
           "hardware": "Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p150x8",
           "hardware": "2 x Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "t3k",
           "hardware": "Loudbox (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p100",
           "hardware": "p100 (Blackhole)",
           "status": "Not Supported"
         }
@@ -1287,34 +1532,41 @@
       ],
       "compatibility": [
         {
+          "hardware_id": "galaxy",
           "hardware": "Galaxy (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "n150",
           "hardware": "n150 (Wormhole)",
           "status": "Supported",
           "metrics": {
-            "mean_ttft_ms": 119.1,
+            "mean_ttft_ms": 131.2,
             "ttft": 0.05
           }
         },
         {
+          "hardware_id": "n300",
           "hardware": "n300 (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p150x4",
           "hardware": "Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p150x8",
           "hardware": "2 x Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "t3k",
           "hardware": "Loudbox (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p100",
           "hardware": "p100 (Blackhole)",
           "status": "Not Supported"
         }
@@ -1330,30 +1582,37 @@
       ],
       "compatibility": [
         {
+          "hardware_id": "galaxy",
           "hardware": "Galaxy (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "n150",
           "hardware": "n150 (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "n300",
           "hardware": "n300 (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p150x4",
           "hardware": "Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p150x8",
           "hardware": "2 x Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "t3k",
           "hardware": "Loudbox (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p100",
           "hardware": "p100 (Blackhole)",
           "status": "Not Supported"
         }
@@ -1369,38 +1628,45 @@
       ],
       "compatibility": [
         {
+          "hardware_id": "galaxy",
           "hardware": "Galaxy (Wormhole)",
           "status": "Supported",
           "metrics": {
-            "mean_ttft_ms": 650.1,
+            "mean_ttft_ms": 715.5,
             "ttft": 800.0
           }
         },
         {
+          "hardware_id": "n150",
           "hardware": "n150 (Wormhole)",
           "status": "Supported",
           "metrics": {
-            "mean_ttft_ms": 658.2,
+            "mean_ttft_ms": 679.2,
             "ttft": 800.0
           }
         },
         {
+          "hardware_id": "n300",
           "hardware": "n300 (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p150x4",
           "hardware": "Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p150x8",
           "hardware": "2 x Quietbox (Blackhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "t3k",
           "hardware": "Loudbox (Wormhole)",
           "status": "Not Supported"
         },
         {
+          "hardware_id": "p100",
           "hardware": "p100 (Blackhole)",
           "status": "Not Supported"
         }
