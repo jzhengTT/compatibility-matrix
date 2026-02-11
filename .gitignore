@@ -1,17 +1,3 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
-
-node_modules
-dist
-dist-ssr
-*.local
-
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
@@ -23,7 +9,22 @@ dist-ssr
 *.sln
 *.sw?
 
-# Python
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs
+*.log
+
+# Node.js (frontend)
+node_modules
+dist
+dist-ssr
+*.local
+
+# Python (backend & scripts)
 __pycache__/
 *.py[cod]
 *$py.class
@@ -33,6 +34,3 @@ __pycache__/
 venv/
 ENV/
 env/
-
-# Environment variables (database credentials)
-.env

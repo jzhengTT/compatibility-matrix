@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:api": "cd ../backend && python3 api_server.py",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"

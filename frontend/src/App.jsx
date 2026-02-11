@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Sidebar from './components/Sidebar'
 import ModelGrid from './components/ModelGrid'
+import { useCompatibilityData } from './hooks/useCompatibilityData'
 
 function App() {
   const [searchQuery, setSearchQuery] = useState('')
@@ -11,6 +12,9 @@ function App() {
     software: [],
     status: []
   })
+
+  // Fetch compatibility data from backend API
+  const { data: compatibilityData, loading, error, refetch } = useCompatibilityData()
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -28,6 +32,10 @@ function App() {
         {/* Main Content */}
         <div className="flex-1">
           <ModelGrid
+            compatibilityData={compatibilityData}
+            loading={loading}
+            error={error}
+            onRetry={refetch}
             searchQuery={searchQuery}
             filters={filters}
           />

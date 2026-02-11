@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react'
 import ModelCard from './ModelCard'
-import compatibilityData from '../../data/compatibility.json'
+import LoadingState from './LoadingState'
+import ErrorState from './ErrorState'
 
-const ModelGrid = ({ searchQuery, filters }) => {
+const ModelGrid = ({ compatibilityData, loading, error, onRetry, searchQuery, filters }) => {
   const [filteredModels, setFilteredModels] = useState([])
 
   useEffect(() => {
     // Apply filters and search
-    let filtered = compatibilityData.models || []
+    let filtered = compatibilityData?.models || []
 
     // Apply search query
     if (searchQuery.trim()) {
@@ -52,7 +53,12 @@ const ModelGrid = ({ searchQuery, filters }) => {
     }
 
     setFilteredModels(filtered)
-  }, [searchQuery, filters])
+  }, [searchQuery, filters, compatibilityData])
+
+  // Handle loading and error states
+  if (loading) return <LoadingState />
+  if (error) return <ErrorState error={error} onRetry={onRetry} />
+  if (!compatibilityData) return null
 
   const totalModels = filteredModels.length
 

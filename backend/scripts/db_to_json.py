@@ -25,6 +25,46 @@ from conversion_utils import (
 from db_config import execute_query
 
 
+def upload_to_s3(file_path: str) -> bool:
+    """
+    Upload the JSON file to S3 bucket.
+    Requires AWS credentials to be set in environment variables.
+    Returns True if successful, False otherwise.
+    """
+    try:
+        import boto3
+        from botocore.exceptions import ClientError, NoCredentialsError
+    except ImportError:
+        print("Error: boto3 is required for S3 upload. Install with: pip install boto3")
+        return False
+
+    bucket = os.getenv('AWS_S3_BUCKET', 'ttdata-data-pipeline-compatibility-matrix-raw')
+    key = os.getenv('AWS_S3_KEY', 'data/compatibility.json')
+
+    try:
+        s3_client = boto3.client(
+            's3',
+            aws_access_key_id=os.getenv('AWS_ACCESS_KEY_ID'),
+            aws_secret_access_key=os.getenv('AWS_SECRET_ACCESS_KEY'),
+            region_name=os.getenv('AWS_REGION', 'us-east-1')
+        )
+
+        print(f"\nUploading to S3: s3://{bucket}/{key}...")
+        s3_client.upload_file(file_path, bucket, key)
+        print(f"✓ Successfully uploaded to S3: s3://{bucket}/{key}")
+        return True
+
+    except NoCredentialsError:
+        print("Error: AWS credentials not found. Please set AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY")
+        return False
+    except ClientError as e:
+        print(f"Error uploading to S3: {e}")
+        return False
+    except Exception as e:
+        print(f"Unexpected error during S3 upload: {e}")
+        return False
+
+
 def load_data_from_database() -> pd.DataFrame:
     """Fetch compatibility data from database and return as DataFrame."""
     print("Fetching data from database...")
@@ -151,6 +191,10 @@ def convert_database_to_json(output_path: str) -> None:
         new_models=new_models,
         new_devices=new_devices,
     )
+
+    # Upload to S3 if enabled
+    if os.getenv('UPLOAD_TO_S3', 'false').lower() == 'true':
+        upload_to_s3(output_path)
 
 if __name__ == '__main__':
     script_dir = os.path.dirname(os.path.abspath(__file__))
