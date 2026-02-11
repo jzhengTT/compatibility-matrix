@@ -27,7 +27,7 @@ CORS(app, origins=cors_origins)
 S3_BUCKET = os.getenv('AWS_S3_BUCKET', 'ttdata-data-pipeline-compatibility-matrix-raw')
 S3_KEY = os.getenv('AWS_S3_KEY', 'data/compatibility.json')
 CACHE_TTL = int(os.getenv('CACHE_TTL_SECONDS', '300'))  # Default 5 minutes
-API_PORT = int(os.getenv('API_PORT', '8000'))
+API_PORT = int(os.getenv('PORT', os.getenv('API_PORT', '8000')))  # Railway uses PORT
 
 # In-memory cache
 cache = {
