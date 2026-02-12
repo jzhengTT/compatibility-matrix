@@ -1,19 +1,15 @@
 # Tenstorrent Compatibility Matrix Pipeline
 
-Data pipeline for converting Tenstorrent compatibility data from multiple sources (PostgreSQL database and Excel files) to JSON format for the Compatibility Matrix application.
+Data pipeline for converting Tenstorrent compatibility data from PostgreSQL database to JSON format for the Compatibility Matrix application.
 
 ## Overview
 
-This pipeline processes benchmark run data and converts it to a JSON format that matches the compatibility matrix schema. It supports two data sources:
-
-1. **PostgreSQL Database**: Fetches live data from the Tenstorrent database
-2. **Excel Files**: Processes local Excel files with compatibility data
+This pipeline processes benchmark run data and converts it to a JSON format that matches the compatibility matrix schema. It fetches live data from the Tenstorrent PostgreSQL database.
 
 ## Requirements
 
 - Python 3.7+
 - pandas
-- openpyxl
 - psycopg2-binary
 - python-dotenv
 - boto3 (for S3 operations)
@@ -53,34 +49,6 @@ This will:
 - Convert it to the JSON schema format
 - Output to `data/compatibility.json`
 
-### Convert Excel to JSON
-
-Process local Excel files:
-
-```bash
-python excel_to_json.py
-```
-
-This will:
-- Read `data/compatibility.xlsx`
-- Convert it to the JSON schema format
-- Output to `data/compatibility.json`
-
-### Inspect Data Structure
-
-To inspect the Excel file structure before conversion:
-
-```bash
-python excel_to_json.py --inspect
-```
-
-This will display:
-- Sheet names
-- Column names and types
-- Sample data
-- Unique model names and devices
-- Available metrics
-
 ## Configuration
 
 The pipeline uses several configuration files:
@@ -113,7 +81,7 @@ The generated JSON follows this simplified schema:
 {
   "metadata": {
     "generated_at": "ISO-8601 timestamp",
-    "source": "database or Excel file",
+    "source": "database",
     "schema_version": "1.0"
   },
   "models": [
