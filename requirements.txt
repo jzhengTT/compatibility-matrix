@@ -1,0 +1,16 @@
+# Flask API dependencies
+flask==3.1.0
+flask-cors==5.0.0
+
+# AWS S3
+boto3==1.35.85
+
+# Environment variables
+python-dotenv==1.0.1
+
+# Data processing
+pandas>=2.0.0
+openpyxl>=3.1.0
+
+# PostgreSQL database
+psycopg2-binary>=2.9.0

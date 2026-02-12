@@ -12,7 +12,18 @@
       "Bash(if [ -d \".venv\" ])",
       "Bash(then source .venv/bin/activate)",
       "Bash(else python3 -m venv .venv)",
-      "Bash(test:*)"
+      "Bash(test:*)",
+      "Bash(railway up:*)",
+      "Bash(railway service add:*)",
+      "Bash(railway service:*)",
+      "Bash(railway add:*)",
+      "Bash(railway logs:*)",
+      "Bash(railway variables:*)",
+      "Bash(railway variable list:*)",
+      "Bash(railway variable set:*)",
+      "Bash(railway open:*)",
+      "Bash(railway domain:*)",
+      "Bash(railway variable delete:*)"
     ]
   }
 }

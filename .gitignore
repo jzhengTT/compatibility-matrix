@@ -1,36 +1,15 @@
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
-.DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
-
-# Environment variables
+# Environment files
 .env
 .env.local
-.env.*.local
 
-# Logs
-logs
-*.log
-
-# Node.js (frontend)
-node_modules
-dist
-dist-ssr
-*.local
-
-# Python (backend & scripts)
+# Python
 __pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
+*.pyc
+*.pyo
+*.pyd
 .venv/
 venv/
-ENV/
-env/
+*.log
+
+# Generated files
+new_entries.txt
